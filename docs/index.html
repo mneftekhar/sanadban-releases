@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-lang="fa" class="pending">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>سندبان | SanadBan</title>
+<meta name="description" content="سندبان: اتصال امن دفترخانه به شبکهٔ سازمان ثبت. SanadBan: a dependable VPN connection from notary offices to the registry network, for Windows 10 and 11.">
+<meta name="theme-color" content="#0F4C5C">
+<meta property="og:title" content="SanadBan / سندبان">
+<meta property="og:description" content="Secure connection to the registry network. اتصال امن به شبکهٔ سازمان ثبت">
+<meta property="og:image" content="https://mneftekhar.github.io/sanadban-releases/assets/social.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/icon-512.png">
+<link rel="preload" href="fonts/Vazirmatn-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<script>
+/* Language before anything is drawn: a choice made on this site wins; otherwise a quick guess now
+   (Iran time zone or a Persian browser) and the visitor's country from their IP a moment later. */
+(function () {
+  var d = document.documentElement, saved = null;
+  try { saved = localStorage.getItem("sb-lang"); } catch (e) {}
+  function set(l) { d.lang = l; d.dir = l === "fa" ? "rtl" : "ltr"; d.setAttribute("data-lang", l); }
+  window.__sbSet = set;
+  if (saved === "fa" || saved === "en") { set(saved); d.className = ""; window.__sbChosen = true; return; }
+  var tz = ""; try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ""; } catch (e) {}
+  var langs = (navigator.languages || [navigator.language || ""]).join(",").toLowerCase();
+  set(tz === "Asia/Tehran" || /(^|,)fa/.test(langs) ? "fa" : "en");
+  setTimeout(function () { d.className = ""; }, 1300);   /* never keep the page hidden for long */
+})();
+</script>
+<style>
+@font-face { font-family: "Vazirmatn"; src: url(fonts/Vazirmatn-Regular.woff2) format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Vazirmatn"; src: url(fonts/Vazirmatn-Medium.woff2) format("woff2"); font-weight: 500; font-display: swap; }
+@font-face { font-family: "Vazirmatn"; src: url(fonts/Vazirmatn-Bold.woff2) format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "Space Grotesk"; src: url(fonts/SpaceGrotesk-Bold.woff2) format("woff2"); font-weight: 700; font-display: swap; }
+
+:root {
+  --paper: #EEF3F1;        /* cool security paper */
+  --paper-2: #E3ECE9;
+  --ink: #12343C;          /* text */
+  --teal: #0F4C5C;         /* the logo's teal */
+  --line: #C3D6D3;         /* rules and guilloche */
+  --muted: #536C73;
+  --seal: #B8761F;         /* the seal's amber, darkened for text on paper */
+  --seal-bright: #E09F3E;
+  --app: #0E1320;          /* the app's own dark background */
+  --focus: #0B7C8C;
+  --measure: 38rem;
+  --display: "Space Grotesk", "Vazirmatn", system-ui, sans-serif;
+  --body: "Vazirmatn", system-ui, "Segoe UI", sans-serif;
+}
+html[data-lang="fa"] { --display: "Vazirmatn", system-ui, sans-serif; }
+html[data-lang="fa"] [data-l="en"], html[data-lang="en"] [data-l="fa"] { display: none !important; }
+html.pending body { opacity: 0; }
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font: 400 1.0625rem/1.75 var(--body); transition: opacity .25s ease;
+}
+html[data-lang="en"] body { line-height: 1.6; }
+img, video { display: block; max-width: 100%; height: auto; }
+a { color: var(--teal); text-underline-offset: .2em; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 4px; }
+.skip { position: absolute; inset-inline-start: 1rem; top: -4rem; background: var(--teal); color: #fff; padding: .5rem 1rem; z-index: 10; }
+.skip:focus { top: 1rem; }
+.wrap { width: min(72rem, 100% - 2.5rem); margin-inline: auto; }
+h1, h2, h3 { font-family: var(--display); color: var(--teal); font-weight: 700; margin: 0; }
+h2 { font-size: clamp(1.6rem, 2.6vw, 2rem); line-height: 1.25; letter-spacing: -.01em; }
+html[data-lang="fa"] h2 { letter-spacing: 0; line-height: 1.5; }
+p { margin: 0; }
+.lead { max-width: var(--measure); color: var(--ink); }
+section { padding-block: clamp(3.5rem, 8vw, 6rem); }
+section + section { border-top: 1px solid var(--line); }
+
+/* top bar */
+.bar { display: flex; align-items: center; gap: 1rem; padding-block: 1.25rem; }
+.mark { display: flex; align-items: center; gap: .7rem; text-decoration: none; color: var(--teal); }
+.mark img { width: 2.5rem; height: 2.5rem; }
+.word { font: 700 1.45rem/1 "Space Grotesk", var(--body); letter-spacing: -.01em; }
+.word b, .word-fa b { color: var(--seal); font-weight: 700; }
+.word-fa { font: 700 1.5rem/1 "Vazirmatn", sans-serif; }
+.bar .spacer { flex: 1; }
+.lang { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: 3px; background: #fff8; }
+.lang button {
+  font: 500 .9rem/1 var(--body); border: 0; background: none; color: var(--muted);
+  padding: .45rem .8rem; border-radius: 999px; cursor: pointer;
+}
+.lang button[aria-pressed="true"] { background: var(--teal); color: #fff; }
+.bar .get { font-size: .95rem; padding: .55rem 1rem; }
+
+/* buttons */
+.btn {
+  display: inline-flex; align-items: center; gap: .6rem; text-decoration: none;
+  background: var(--teal); color: #fff; border-radius: .6rem; padding: .9rem 1.4rem;
+  font: 700 1.05rem/1.2 var(--body); box-shadow: 0 1px 0 #ffffff40 inset, 0 8px 20px -10px #0F4C5C99;
+}
+.btn:hover { background: #0c3f4c; }
+.btn svg { width: 1.2rem; height: 1.2rem; flex: none; }
+
+/* hero */
+.hero { overflow: clip; overflow-clip-margin: 0; padding-block: clamp(1.5rem, 5vw, 4rem) clamp(3rem, 7vw, 5.5rem); border-top: 0; }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 7fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
+.hero h1 { font-size: clamp(2.2rem, 4.2vw, 3.4rem); line-height: 1.08; letter-spacing: -.025em; text-wrap: balance; }
+html[data-lang="fa"] .hero h1 { line-height: 1.45; letter-spacing: 0; font-size: clamp(2.1rem, 4.2vw, 3.3rem); }
+.hero .lead { margin-top: 1.4rem; font-size: 1.15rem; color: #26474F; }
+.cta { margin-top: 2rem; display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.6rem; }
+.fine { margin-top: 1rem; font-size: .9rem; color: var(--muted); max-width: var(--measure); }
+.stage { position: relative; isolation: isolate; }
+.rosette { position: absolute; z-index: -1; width: 120%; inset-block-start: -22%; inset-inline-end: -18%; pointer-events: none; opacity: .9; }
+.rosette path { fill: none; stroke: var(--line); stroke-width: .6; }
+.window {
+  border-radius: 12px; overflow: hidden; background: var(--app);
+  box-shadow: 0 0 0 1px #0E132020, 0 30px 60px -25px #0E1320AA, 0 12px 24px -12px #0F4C5C66;
+}
+.seal {
+  position: absolute; width: clamp(5.5rem, 10vw, 7.5rem); inset-block-end: -2.2rem; inset-inline-start: -2rem;
+  filter: drop-shadow(0 6px 10px #6b3d0a40);
+}
+.seal-w { font: 700 15px "Space Grotesk", var(--body); fill: #FFF6E8; }
+.seal-w.fa { font: 700 15px "Vazirmatn", sans-serif; }
+
+/* what it does: a ruled two-column list, like the clauses of a deed */
+.does h2 { margin-bottom: 2.5rem; }
+.clauses { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 clamp(2rem, 5vw, 4.5rem); margin: 0; }
+.clause { padding-block: 1.4rem; border-top: 1px solid var(--line); }
+.clause dt { font: 700 1.12rem/1.4 var(--display); color: var(--teal); }
+html[data-lang="fa"] .clause dt { font-family: var(--body); }
+.clause dd { margin: .45rem 0 0; color: #2C4C54; max-width: 34rem; }
+
+/* split tunnel */
+.split .wrap { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
+.split .lead { margin-top: 1rem; }
+.lanes { display: grid; grid-template-columns: auto 1fr auto; align-items: center; row-gap: 1.6rem; column-gap: 0; }
+.node { background: #fff; border: 1px solid var(--line); border-radius: .7rem; padding: .7rem 1rem; font-weight: 500; line-height: 1.4; }
+.node small { display: block; color: var(--muted); font-weight: 400; font-size: .85rem; }
+.pc { grid-row: 1 / span 2; display: flex; flex-direction: column; align-items: center; gap: .4rem; text-align: center; }
+.pc svg { width: 3rem; height: 3rem; color: var(--teal); }
+.lane { position: relative; height: 3.2rem; margin-inline: .6rem; }
+.lane::before { content: ""; position: absolute; inset-inline: 0; top: 50%; border-top: 2px solid #9DB3B1; }
+.lane.vpn::before { border-top: 10px solid var(--teal); border-radius: 10px; transform: translateY(-4px); }
+.lane.vpn .shield { position: absolute; top: 50%; left: 50%; width: 2.6rem; translate: -50% -50%; }
+.lane::after {
+  content: ""; position: absolute; inset-inline-end: -2px; top: 50%; translate: 0 -50%;
+  border-block: 7px solid transparent; border-inline-start: 10px solid #9DB3B1;
+}
+.lane.vpn::after { border-inline-start-color: var(--teal); }
+.node.reg { border-color: var(--teal); box-shadow: inset 4px 0 0 var(--teal); }
+html[dir="rtl"] .node.reg { box-shadow: inset -4px 0 0 var(--teal); }
+
+/* inside the app */
+.viewer { display: grid; grid-template-columns: 13rem minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 3rem); margin-top: 2.5rem; align-items: start; }
+.tabs { display: flex; flex-direction: column; gap: .15rem; position: sticky; top: 1.5rem; }
+.tabs button {
+  text-align: start; font: 500 1rem/1.3 var(--body); color: var(--muted); background: none; border: 0;
+  padding: .65rem .9rem; border-radius: .5rem; cursor: pointer; border-inline-start: 3px solid transparent;
+}
+.tabs button:hover { color: var(--teal); background: var(--paper-2); }
+.tabs button[aria-selected="true"] { color: var(--teal); background: #fff; border-inline-start-color: var(--teal); }
+.shot figure { margin: 0; }
+.shot .window { aspect-ratio: 2120 / 1296; }
+.shot img { width: 100%; height: 100%; object-fit: cover; }
+.shot figcaption { margin-top: 1rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: .4rem 2rem; }
+.shot .what { font-weight: 500; }
+.shot .blurred { color: var(--muted); font-size: .9rem; }
+
+/* install */
+.install .wrap { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: clamp(2rem, 5vw, 4.5rem); }
+.steps { list-style: none; margin: 0; padding: 0; counter-reset: s; }
+.steps li { counter-increment: s; display: grid; grid-template-columns: 2.6rem 1fr; gap: 1rem; padding-block: 1.1rem; border-top: 1px solid var(--line); }
+.steps li::before {
+  content: counter(s); width: 2.2rem; height: 2.2rem; border-radius: 50%; border: 1.5px solid var(--teal);
+  display: grid; place-items: center; font: 700 1rem/1 var(--display); color: var(--teal);
+}
+html[data-lang="fa"] .steps li::before { content: counter(s, persian); }
+.steps b { color: var(--teal); }
+.needs { margin-top: 1.5rem; padding: 1rem 1.2rem; background: #fff; border-radius: .7rem; border: 1px solid var(--line); font-size: .95rem; }
+
+/* changes: a timeline, newest first */
+.timeline { margin-top: 2.5rem; display: grid; gap: 0; }
+.rel { display: grid; grid-template-columns: 11rem minmax(0, 1fr); gap: clamp(1rem, 4vw, 3rem); padding-block: 1.8rem; border-top: 1px solid var(--line); }
+.rel .ver { font: 700 1.5rem/1.2 var(--display); color: var(--teal); }
+.rel .when { color: var(--muted); font-size: .9rem; margin-top: .3rem; }
+.rel .sum { font-weight: 500; margin-bottom: .8rem; max-width: 44rem; }
+.rel ul { margin: 0; padding: 0; list-style: none; display: grid; gap: .55rem; max-width: 44rem; }
+.rel li { display: grid; grid-template-columns: 6.5rem 1fr; gap: .8rem; align-items: baseline; }
+.kind { font-size: .8rem; font-weight: 500; border-radius: 999px; padding: .1rem .6rem; justify-self: start; white-space: nowrap; }
+.k-added { background: #DDEFE6; color: #1C6B45; }
+.k-changed { background: #DCEBF0; color: #155566; }
+.k-fixed { background: #F6E8D2; color: #8A5612; }
+.k-removed { background: #F3DEDE; color: #8E2F2F; }
+.more { margin-top: 1.5rem; }
+
+footer { background: var(--teal); color: #DCEBEA; padding-block: 3.5rem 2.5rem; margin-top: 0; }
+footer .wrap { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: 2.5rem 4rem; }
+footer h3 { color: #fff; font-size: 1.05rem; margin-bottom: .6rem; font-family: var(--body); }
+footer p { max-width: 36rem; }
+footer a { color: #fff; }
+footer .links { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; margin-top: 1rem; }
+footer .small { grid-column: 1 / -1; font-size: .85rem; color: #A9C7C8; border-top: 1px solid #ffffff22; padding-top: 1.2rem; }
+
+@media (max-width: 860px) {
+  .hero .wrap, .split .wrap, .install .wrap, footer .wrap { grid-template-columns: 1fr; }
+  .clauses { grid-template-columns: 1fr; }
+  .viewer { grid-template-columns: 1fr; }
+  .tabs { flex-direction: row; overflow-x: auto; position: static; padding-bottom: .3rem; }
+  .tabs button { white-space: nowrap; border-inline-start: 0; border-bottom: 3px solid transparent; border-radius: .5rem .5rem 0 0; }
+  .tabs button[aria-selected="true"] { border-bottom-color: var(--teal); }
+  .rel { grid-template-columns: 1fr; gap: .6rem; }
+  .bar .get { display: none; }
+  .seal { inset-inline-start: auto; inset-inline-end: -.5rem; }
+}
+@media (max-width: 520px) {
+  .lanes { grid-template-columns: 1fr; row-gap: .4rem; }
+  .pc { grid-row: auto; flex-direction: row; justify-content: center; }
+  .lane { height: 2.2rem; margin: 0 auto; width: 2px; }
+  .lane::before, .lane.vpn::before { inset-inline: auto; left: 50%; top: 0; bottom: 0; border-top: 0; border-left: 2px solid #9DB3B1; transform: none; }
+  .lane.vpn::before { border-left: 8px solid var(--teal); translate: -3px 0; }
+  .lane::after, .lane.vpn .shield { display: none; }
+  .rel li { grid-template-columns: 1fr; gap: .2rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  body { transition: none; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main"><span data-l="fa">رفتن به محتوا</span><span data-l="en">Skip to content</span></a>
+
+<header class="wrap bar">
+  <a class="mark" href="./" aria-label="SanadBan">
+    <img src="assets/logo.svg" alt="" width="40" height="40">
+    <span class="word" data-l="en">Sanad<b>Ban</b></span>
+    <span class="word-fa" data-l="fa">سند<b>بان</b></span>
+  </a>
+  <span class="spacer"></span>
+  <div class="lang" role="group" aria-label="Language / زبان">
+    <button type="button" data-set="fa" lang="fa">فارسی</button>
+    <button type="button" data-set="en" lang="en">English</button>
+  </div>
+  <a class="btn get js-download" href="https://github.com/mneftekhar/sanadban-releases/releases/latest">
+    <span data-l="fa">دریافت</span><span data-l="en">Download</span>
+  </a>
+</header>
+
+<main id="main">
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>
+        <span data-l="fa">اتصال مطمئن دفترخانه به شبکهٔ سازمان ثبت</span>
+        <span data-l="en">A connection to the registry network your office can rely on</span>
+      </h1>
+      <p class="lead">
+        <span data-l="fa">سندبان با یک دکمه وصل می‌شود، فقط ترافیک سازمان را از VPN عبور می‌دهد، اتصال را زنده نگه می‌دارد و اگر ویندوز خطا بدهد، به زبان ساده می‌گوید چه شده و چه باید کرد.</span>
+        <span data-l="en">SanadBan connects with one press, sends only registry traffic through the VPN, keeps the connection alive, and when Windows reports an error it says in plain words what happened and what to do.</span>
+      </p>
+      <div class="cta">
+        <a class="btn js-download" href="https://github.com/mneftekhar/sanadban-releases/releases/latest">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 5.5 10 4.5v7H3zm0 13 7 1v-7H3zm8 1.1L21 21v-8.5H11zM11 4.4 21 3v8.5H11z"/></svg>
+          <span data-l="fa">دریافت برای ویندوز</span><span data-l="en">Download for Windows</span>
+        </a>
+        <a href="#changes"><span data-l="fa">ببینید چه چیزی تغییر کرده</span><span data-l="en">See what changed</span></a>
+      </div>
+      <p class="fine">
+        <span data-l="fa">نسخهٔ <span class="js-ver-fa">۰.۲.۱</span>؛ یک فایل برای ویندوز ۱۰ و ۱۱ روی x64 و ARM64. رایگان، بدون حساب کاربری.</span>
+        <span data-l="en">Version <span class="js-ver">0.2.1</span>, one file for Windows 10 and 11 on x64 and ARM64. Free, no account needed.</span>
+      </p>
+    </div>
+
+    <div class="stage">
+      <svg class="rosette" viewBox="-200 -200 400 400" aria-hidden="true"></svg>
+      <div class="window">
+        <video class="js-video" width="1000" height="612" muted loop playsinline preload="metadata"
+               aria-label=""></video>
+      </div>
+      <svg class="seal" viewBox="0 0 120 120" role="img" aria-label="Signed release / نسخهٔ امضاشده">
+        <circle cx="60" cy="60" r="56" fill="#E09F3E"/>
+        <circle cx="60" cy="60" r="51" fill="none" stroke="#FFF6E8" stroke-width="1.2" stroke-dasharray="1.5 3"/>
+        <circle cx="60" cy="60" r="45" fill="none" stroke="#FFF6E8" stroke-width=".8"/>
+        <g transform="translate(44.5 27) scale(.26)">
+          <path d="M60 6 L104 22 V58 C104 86 84 105 60 114 C36 105 16 86 16 58 V22 Z" fill="#FFF6E8"/>
+          <path d="M44 34 H68 L80 46 V82 a4 4 0 0 1 -4 4 H44 a4 4 0 0 1 -4 -4 V38 a4 4 0 0 1 4 -4 Z" fill="#B8761F"/>
+        </g>
+        <text data-l="fa" x="60" y="82" text-anchor="middle" direction="rtl" class="seal-w fa">امضاشده</text>
+        <text data-l="en" x="60" y="81" text-anchor="middle" class="seal-w">Signed</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="does" aria-labelledby="does-h">
+  <div class="wrap">
+    <h2 id="does-h"><span data-l="fa">سندبان چه می‌کند</span><span data-l="en">What SanadBan does</span></h2>
+    <dl class="clauses">
+      <div class="clause">
+        <dt><span data-l="fa">یک دکمه برای اتصال</span><span data-l="en">One press to connect</span></dt>
+        <dd><span data-l="fa">برای هر سرور همان پروتکلی به‌کار می‌رود که آن سرور می‌پذیرد: SSTP، PPTP، L2TP/IPsec یا IKEv2؛ همه از خودِ ویندوز، بدون برنامهٔ اضافه.</span><span data-l="en">Each server gets the protocol it accepts: SSTP, PPTP, L2TP/IPsec or IKEv2, all built into Windows, with nothing extra to install.</span></dd>
+      </div>
+      <div class="clause">
+        <dt><span data-l="fa">فقط ترافیک سازمان از VPN</span><span data-l="en">Only registry traffic through the VPN</span></dt>
+        <dd><span data-l="fa">اینترنتِ دفترخانه همان‌طور که بود می‌ماند و فقط شبکهٔ سازمان ثبت از VPN عبور می‌کند. نشانی‌های سازمان هنگام اتصال از DNS سازمان پرسیده می‌شوند.</span><span data-l="en">The office internet stays as it was; only the registry network goes through the VPN, and registry names are looked up on the registry DNS while connected.</span></dd>
+      </div>
+      <div class="clause">
+        <dt><span data-l="fa">اتصالی که برقرار می‌ماند</span><span data-l="en">A connection that stays up</span></dt>
+        <dd><span data-l="fa">زنده بودنِ اتصال مرتب بررسی می‌شود و اگر قطع شود، سندبان دوباره وصل می‌شود و هر بار کمی بیشتر صبر می‌کند. «قطع ایمن اینترنت» هم اگر بخواهید، ترافیک سازمان را تا برگشتنِ VPN نگه می‌دارد.</span><span data-l="en">The connection is checked regularly and SanadBan reconnects when it drops, waiting a little longer each time. If you want, the kill switch holds registry traffic back until the VPN is up again.</span></dd>
+      </div>
+      <div class="clause">
+        <dt><span data-l="fa">رمز عبور در امان</span><span data-l="en">Passwords kept safe</span></dt>
+        <dd><span data-l="fa">اطلاعات ورود با کلید همین رایانه رمزگذاری می‌شود و فقط سرویس سندبان از آن استفاده می‌کند. یک اطلاعات ورود برای همهٔ سرورها کافی است.</span><span data-l="en">Logins are encrypted with this computer's key and used only by the SanadBan service. One login can serve every server.</span></dd>
+      </div>
+      <div class="clause">
+        <dt><span data-l="fa">علت را پیدا می‌کند</span><span data-l="en">Finds the cause</span></dt>
+        <dd><span data-l="fa">«عیب‌یابی» آداپتورهای شبکه، DNS، سرورها، اینترنت و VPN را آزمایش می‌کند و گزارشی برای پشتیبانی می‌سازد. «راهنما» خطاهای رایج VPN ویندوز را یکی‌یکی توضیح می‌دهد.</span><span data-l="en">Troubleshoot tests the network adapters, DNS, servers, internet and the VPN, and saves a report for support. The Guide explains the common Windows VPN errors one by one.</span></dd>
+      </div>
+      <div class="clause">
+        <dt><span data-l="fa">دسترسی مدیر، فقط یک بار</span><span data-l="en">Administrator rights, once</span></dt>
+        <dd><span data-l="fa">سرویس پس‌زمینه یک بار نصب می‌شود. پس از آن می‌توانید پنجره را ببندید؛ اتصال از ناحیهٔ اعلان کنار ساعت برقرار می‌ماند.</span><span data-l="en">The background service is installed once. After that you can close the window; the connection stays up from the notification area next to the clock.</span></dd>
+      </div>
+      <div class="clause">
+        <dt><span data-l="fa">خودش به‌روز می‌شود، با امضا</span><span data-l="en">Updates itself, signed</span></dt>
+        <dd><span data-l="fa">نسخهٔ جدید بی‌صدا از GitHub دریافت می‌شود، امضای توسعه‌دهنده بررسی می‌شود و وقتی رایانه بی‌کار است نصب می‌شود. اگر درست راه نیفتد، نسخهٔ قبلی برمی‌گردد.</span><span data-l="en">New versions download quietly from GitHub, the developer's signature is checked, and they install while the computer is idle. If one does not start properly, the previous version comes back.</span></dd>
+      </div>
+      <div class="clause">
+        <dt><span data-l="fa">فارسی و انگلیسی</span><span data-l="en">Persian and English</span></dt>
+        <dd><span data-l="fa">فارسیِ کاملاً راست‌به‌چپ یا انگلیسی، با پوستهٔ روشن و تیره که از ویندوز پیروی می‌کند.</span><span data-l="en">Fully right-to-left Persian or English, with light and dark themes that follow Windows.</span></dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<section class="split" aria-labelledby="split-h">
+  <div class="wrap">
+    <div>
+      <h2 id="split-h"><span data-l="fa">تفکیک ترافیک، به زبان ساده</span><span data-l="en">Split tunnel, simply</span></h2>
+      <p class="lead"><span data-l="fa">فقط آنچه به سازمان ثبت مربوط است از VPN می‌رود؛ باقیِ کارهای دفترخانه سرعتِ اینترنتِ خودش را دارد. اگر بخواهید، شبکه‌ها و وب‌سایت‌های دیگری هم اضافه کنید یا همه‌چیز را از VPN بفرستید.</span><span data-l="en">Only what belongs to the registry goes through the VPN; everything else the office does keeps the speed of its own internet. You can add networks and websites of your own, or send everything through the VPN.</span></p>
+    </div>
+    <div class="lanes" role="img" aria-label="">
+      <div class="pc">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M3 5h18v11H3zM8 20h8M12 16v4"/></svg>
+        <span class="node"><span data-l="fa">این رایانه</span><span data-l="en">This computer</span></span>
+      </div>
+      <div class="lane vpn"><img class="shield" src="assets/logo.svg" alt=""></div>
+      <div class="node reg"><span data-l="fa">شبکهٔ سازمان ثبت</span><span data-l="en">Registry network</span><small><span data-l="fa">از VPN</span><span data-l="en">through the VPN</span></small></div>
+      <div class="lane"></div>
+      <div class="node"><span data-l="fa">سایت‌ها و برنامه‌های دیگر</span><span data-l="en">Every other site and app</span><small><span data-l="fa">از اینترنت خودتان</span><span data-l="en">on your own internet</span></small></div>
+    </div>
+  </div>
+</section>
+
+<section class="inside" aria-labelledby="inside-h">
+  <div class="wrap">
+    <h2 id="inside-h"><span data-l="fa">صفحه‌های برنامه</span><span data-l="en">Inside the app</span></h2>
+    <div class="viewer">
+      <div class="tabs" role="tablist" aria-orientation="vertical"></div>
+      <div class="shot" role="tabpanel">
+        <figure>
+          <div class="window"><img class="js-shot" src="assets/home-fa.webp" alt="" width="1600" height="978"></div>
+          <figcaption>
+            <span class="what js-what"></span>
+            <span class="blurred"><span data-l="fa">نام و نشانی سرورها و اطلاعات ورود در این تصویرها محو شده‌اند.</span><span data-l="en">Server names, addresses and logins are blurred in these pictures.</span></span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="install" id="install" aria-labelledby="install-h">
+  <div class="wrap">
+    <div>
+      <h2 id="install-h"><span data-l="fa">نصب در چهار گام</span><span data-l="en">Install in four steps</span></h2>
+      <p class="lead" style="margin-top:1rem"><span data-l="fa">این فایل فقط برای نخستین نصب است. نسخه‌های نصب‌شده خودشان به‌روز می‌شوند.</span><span data-l="en">This file is only for the first install. Installed copies update themselves.</span></p>
+      <p class="cta"><a class="btn js-download" href="https://github.com/mneftekhar/sanadban-releases/releases/latest"><span data-l="fa">دریافت برای ویندوز</span><span data-l="en">Download for Windows</span></a></p>
+    </div>
+    <div>
+      <ol class="steps">
+        <li><span><span data-l="fa">فایل <b dir="ltr">SanadBan-<span class="js-ver">0.2.1</span>-win.zip</b> را دریافت و از حالت فشرده خارج کنید (راست‌کلیک، «استخراج همه»).</span><span data-l="en">Download <b>SanadBan-<span class="js-ver">0.2.1</span>-win.zip</b> and unpack it (right-click it, then Extract All).</span></span></li>
+        <li><span><span data-l="fa"><b>SanadBan.exe</b> را در بالای پوشه باز کنید. خودش برنامهٔ مناسبِ پردازندهٔ رایانه را اجرا می‌کند.</span><span data-l="en">Open <b>SanadBan.exe</b> at the top of the folder. It starts the right program for the computer's processor.</span></span></li>
+        <li><span><span data-l="fa">در نوار زرد بالای پنجره <b>«نصب سرویس»</b> را بزنید و پیام ویندوز را تأیید کنید. این کار برای هر رایانه فقط یک بار لازم است.</span><span data-l="en">Press <b>Install service</b> in the yellow bar at the top and approve the Windows prompt. This is needed once per computer.</span></span></li>
+        <li><span><span data-l="fa">در «سرورها» <b>«افزودن سرورهای سازمان ثبت»</b>، در «اطلاعات ورود» نام کاربری و رمز عبور را وارد کنید و در «خانه» <b>«اتصال»</b> را بزنید.</span><span data-l="en">On Servers press <b>Add registry servers</b>, on Logins add your user name and password, then press <b>Connect</b> on Home.</span></span></li>
+      </ol>
+      <p class="needs"><span data-l="fa">پیش‌نیاز: ویندوز ۱۰ یا ۱۱ (x64 یا ARM64) و <a href="https://dotnet.microsoft.com/download/dotnet/10.0" rel="noopener" dir="ltr">.NET 10 Desktop Runtime</a> از مایکروسافت.</span><span data-l="en">Needs Windows 10 or 11 (x64 or ARM64) and Microsoft's <a href="https://dotnet.microsoft.com/download/dotnet/10.0" rel="noopener">.NET 10 Desktop Runtime</a>.</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="changes" id="changes" aria-labelledby="changes-h">
+  <div class="wrap">
+    <h2 id="changes-h"><span data-l="fa">چه چیزی تغییر کرده</span><span data-l="en">What changed</span></h2>
+    <div class="timeline js-timeline"></div>
+    <p class="more"><a href="https://github.com/mneftekhar/sanadban-releases/blob/main/CHANGELOG.md"><span data-l="fa">تاریخچهٔ کامل تغییرات در GitHub</span><span data-l="en">Full changelog on GitHub</span></a></p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <h3><span data-l="fa">دربارهٔ توسعه‌دهنده</span><span data-l="en">About the developer</span></h3>
+      <p><span data-l="fa">سندبان را م. افتخار به‌صورت مستقل ساخته است؛ از سرِ احترام به سردفتران ایران، تا هر دفترخانه اتصالی مطمئن به شبکهٔ سازمان ثبت داشته باشد و با خیال آسوده به کار خود برسد.</span><span data-l="en">SanadBan is an independent project by M. Eftekhar. It was made out of respect for Iran's notaries, so that every notary office has a connection to the registry network it can rely on, and can simply get on with its work.</span></p>
+      <div class="links">
+        <a href="https://github.com/mneftekhar/sanadban-releases/releases"><span data-l="fa">همهٔ انتشارها در GitHub</span><span data-l="en">All releases on GitHub</span></a>
+        <a href="https://github.com/mneftekhar/sanadban-releases/blob/main/CHANGELOG.md"><span data-l="fa">تاریخچهٔ تغییرات</span><span data-l="en">Changelog</span></a>
+      </div>
+    </div>
+    <div>
+      <h3><span data-l="fa">حریم خصوصی</span><span data-l="en">Privacy</span></h3>
+      <p><span data-l="fa">اطلاعات ورودِ شما روی همین رایانه رمزگذاری می‌شود و از آن خارج نمی‌شود. گزارش‌ها هم روی همین رایانه می‌مانند. سندبان فقط برای اتصال به سرورهای VPN و بررسی به‌روزرسانی به اینترنت وصل می‌شود.</span><span data-l="en">Your logins are encrypted on this computer and never leave it. Logs and reports are kept on this computer. SanadBan contacts the internet only to reach the VPN servers and to check for updates.</span></p>
+    </div>
+    <p class="small"><span data-l="fa">© م. افتخار. قلم‌ها: وزیرمتن اثر صابر راستی‌کردار و Space Grotesk اثر Florian Karsten، هر دو با مجوز SIL Open Font License 1.1.</span><span data-l="en">© M. Eftekhar. Fonts: Vazirmatn by Saber Rastikerdar and Space Grotesk by Florian Karsten, both under the SIL Open Font License 1.1.</span></p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var REPO = "mneftekhar/sanadban-releases";
+  var d = document.documentElement;
+  var fa = function (s) { return String(s).replace(/\d/g, function (c) { return "۰۱۲۳۴۵۶۷۸۹"[c]; }); };
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+  var lang = function () { return d.getAttribute("data-lang"); };
+  var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---- pages of the app ---- */
+  var PAGES = [
+    ["home", "خانه", "Home", "اتصال، وضعیت، مدت اتصال و حجم ترافیک.", "Connect, and see the state, time connected and traffic."],
+    ["servers", "سرورها", "Servers", "سرورهای VPN که می‌توانید به آن‌ها وصل شوید، با سرعت هر کدام.", "The VPN servers you can connect to, with the speed of each."],
+    ["logins", "اطلاعات ورود", "Logins", "نام کاربری و رمز عبور VPN، رمزگذاری‌شده روی همین رایانه.", "User names and passwords for the VPN, kept encrypted on this computer."],
+    ["split", "تفکیک ترافیک", "Split tunnel", "تعیین کنید چه ترافیکی از VPN عبور کند و چه ترافیکی از اینترنت خودتان.", "Choose what goes through the VPN and what stays on your own internet."],
+    ["checks", "عیب‌یابی", "Troubleshoot", "آزمایش آداپتورها، DNS، سرورها، اینترنت و اتصال VPN، با گزارشی برای پشتیبانی.", "Tests the adapters, DNS, servers, internet and the VPN, and saves a report for support."],
+    ["guide", "راهنما", "Guide", "سندبان چگونه کار می‌کند؛ صفحه‌به‌صفحه و همهٔ گزینه‌ها.", "How SanadBan works, page by page, and what every option does."],
+    ["settings", "تنظیمات", "Settings", "زبان، پوسته، اتصال دوبارهٔ خودکار، قطع ایمن اینترنت و شروع با ویندوز.", "Language, theme, automatic reconnect, kill switch and start-up."],
+    ["about", "درباره", "About", "نسخه، توسعه‌دهنده و حریم خصوصی.", "Version, developer and privacy."]
+  ];
+  var current = 0, tabs = $(".tabs");
+  PAGES.forEach(function (p, i) {
+    var b = document.createElement("button");
+    b.type = "button"; b.setAttribute("role", "tab"); b.id = "tab-" + p[0];
+    b.innerHTML = '<span data-l="fa">' + p[1] + '</span><span data-l="en">' + p[2] + "</span>";
+    b.addEventListener("click", function () { show(i, true); });
+    tabs.appendChild(b);
+  });
+  tabs.addEventListener("keydown", function (e) {
+    var k = e.key, n = PAGES.length, i = current;
+    var fwd = (lang() === "fa") ? ["ArrowDown", "ArrowLeft"] : ["ArrowDown", "ArrowRight"];
+    var back = (lang() === "fa") ? ["ArrowUp", "ArrowRight"] : ["ArrowUp", "ArrowLeft"];
+    if (fwd.indexOf(k) >= 0) i = (i + 1) % n; else if (back.indexOf(k) >= 0) i = (i + n - 1) % n;
+    else if (k === "Home") i = 0; else if (k === "End") i = n - 1; else return;
+    e.preventDefault(); show(i, true);
+  });
+  function show(i, focus) {
+    current = i;
+    var p = PAGES[i], l = lang(), img = $(".js-shot");
+    img.src = "assets/" + p[0] + "-" + l + ".webp";
+    img.alt = l === "fa" ? "صفحهٔ «" + p[1] + "» در سندبان" : "The " + p[2] + " page of SanadBan";
+    $(".js-what").textContent = l === "fa" ? p[3] : p[4];
+    $$(".tabs button").forEach(function (b, j) {
+      b.setAttribute("aria-selected", j === i ? "true" : "false");
+      b.tabIndex = j === i ? 0 : -1;
+      if (j === i && focus) b.focus();
+    });
+    $(".shot").setAttribute("aria-labelledby", "tab-" + p[0]);
+  }
+  /* preload the other pictures once the page is idle */
+  setTimeout(function () { ["fa", "en"].forEach(function (l) { PAGES.forEach(function (p) { new Image().src = "assets/" + p[0] + "-" + l + ".webp"; }); }); }, 2500);
+
+  /* ---- the recording in the hero ---- */
+  function setVideo() {
+    var v = $(".js-video"), l = lang();
+    var src = "assets/connect-" + l + ".mp4";
+    if (v.getAttribute("src") !== src) { v.setAttribute("src", src); v.load(); }
+    v.setAttribute("aria-label", l === "fa" ? "اتصال در سندبان: از «متصل نیست» تا «متصل» در چند ثانیه" : "Connecting in SanadBan: from Not connected to Connected in a few seconds");
+    if (reduce) { v.controls = true; } else { v.autoplay = true; var pr = v.play(); if (pr && pr.catch) pr.catch(function () { v.controls = true; }); }
+  }
+
+  /* ---- guilloche rosette: the fine line pattern printed on official papers ---- */
+  (function () {
+    var svg = $(".rosette"), NS = "http://www.w3.org/2000/svg";
+    var layers = [[150, 52, 66, 0], [150, 39, 48, .35], [118, 31, 52, .9], [176, 44, 30, .2]];
+    layers.forEach(function (L, k) {
+      var R = L[0], r = L[1], dd = L[2], ph = L[3], pts = [], steps = 2600;
+      for (var i = 0; i <= steps; i++) {
+        var t = i / steps * Math.PI * 2 * (r / gcd(R, r));
+        var x = (R - r) * Math.cos(t + ph) + dd * Math.cos((R - r) / r * t + ph);
+        var y = (R - r) * Math.sin(t + ph) - dd * Math.sin((R - r) / r * t + ph);
+        pts.push((i ? "L" : "M") + x.toFixed(1) + " " + y.toFixed(1));
+      }
+      var p = document.createElementNS(NS, "path");
+      p.setAttribute("d", pts.join(""));
+      if (k === 2) p.style.stroke = "#D9C49C";
+      svg.appendChild(p);
+      if (!reduce && p.getTotalLength) {
+        var len = p.getTotalLength();
+        p.style.strokeDasharray = len; p.style.strokeDashoffset = len;
+        p.getBoundingClientRect();
+        p.style.transition = "stroke-dashoffset " + (2.6 + k * .5) + "s cubic-bezier(.4,0,.2,1) " + (k * .15) + "s";
+        requestAnimationFrame(function () { p.style.strokeDashoffset = 0; });
+      }
+    });
+    function gcd(a, b) { return b ? gcd(b, a % b) : a; }
+  })();
+
+  /* ---- latest release from GitHub: version and the one download ---- */
+  var latest = null;
+  function setDownload() {
+    if (!latest) return;
+    $$(".js-ver").forEach(function (e) { e.textContent = latest.v; });
+    $$(".js-ver-fa").forEach(function (e) { e.textContent = fa(latest.v); });
+    if (latest.url) $$(".js-download").forEach(function (a) { a.href = latest.url; });
+  }
+  fetch("https://api.github.com/repos/" + REPO + "/releases/latest", { headers: { Accept: "application/vnd.github+json" } })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (j) {
+      if (!j || !j.tag_name) return;
+      var a = (j.assets || []).filter(function (x) { return /-win\.zip$/.test(x.name); })[0];
+      latest = { v: j.tag_name.replace(/^v/, ""), url: a ? a.browser_download_url : null };
+      setDownload();
+    }).catch(function () {});
+
+  /* ---- what changed ---- */
+  var log = null;
+  var KINDS = [["added", "افزوده شد", "Added"], ["changed", "تغییر کرد", "Changed"], ["fixed", "رفع شد", "Fixed"], ["removed", "حذف شد", "Removed"]];
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function fmtDate(iso, l) {
+    try { return new Date(iso + "T12:00:00Z").toLocaleDateString(l === "fa" ? "fa-IR" : "en-GB", { year: "numeric", month: "long", day: "numeric" }); }
+    catch (e) { return iso; }
+  }
+  function renderLog() {
+    if (!log) return;
+    var l = lang(), html = "";
+    log.releases.forEach(function (r) {
+      var items = "";
+      KINDS.forEach(function (k) {
+        (r[k[0]] || []).forEach(function (it) {
+          items += '<li><span class="kind k-' + k[0] + '">' + (l === "fa" ? k[1] : k[2]) + "</span><span>" + esc(it[l]) + "</span></li>";
+        });
+      });
+      html += '<article class="rel"><div><div class="ver">' + (l === "fa" ? fa(r.version) : r.version) + '</div><div class="when">' +
+        esc(fmtDate(r.date, l)) + "<br>" + esc(r.codename[l]) + '</div></div><div><p class="sum">' + esc(r.summary[l]) + "</p><ul>" + items + "</ul></div></article>";
+    });
+    $(".js-timeline").innerHTML = html;
+  }
+  fetch("changelog.json").then(function (r) { return r.json(); }).then(function (j) { log = j; renderLog(); }).catch(function () {});
+
+  /* ---- language ---- */
+  function apply(l, remember) {
+    window.__sbSet(l);
+    if (remember) { try { localStorage.setItem("sb-lang", l); } catch (e) {} window.__sbChosen = true; }
+    document.title = l === "fa" ? "سندبان | اتصال امن به شبکهٔ سازمان ثبت" : "SanadBan | Secure connection to the registry network";
+    $$(".lang button").forEach(function (b) { b.setAttribute("aria-pressed", b.getAttribute("data-set") === l ? "true" : "false"); });
+    $(".lanes").setAttribute("aria-label", l === "fa" ? "فقط شبکهٔ سازمان ثبت از VPN می‌رود؛ باقی ترافیک از اینترنت خودتان." : "Only the registry network goes through the VPN; other traffic uses your own internet.");
+    show(current, false); setVideo(); renderLog(); setDownload();
+  }
+  $$(".lang button").forEach(function (b) { b.addEventListener("click", function () { apply(b.getAttribute("data-set"), true); }); });
+  apply(lang(), false);
+
+  /* Persian for visitors from Iran, English for everyone else, unless they chose on this site.
+     The first of three public lookups to answer decides; none of them sees more than the visit itself. */
+  if (!window.__sbChosen) {
+    var done = false;
+    var decide = function (cc) {
+      if (done || !cc) return; done = true;
+      var l = String(cc).toUpperCase() === "IR" ? "fa" : "en";
+      if (l !== lang()) apply(l, false);
+      d.className = "";
+    };
+    var get = function (url, pick) {
+      var ctl = window.AbortController ? new AbortController() : null;
+      if (ctl) setTimeout(function () { ctl.abort(); }, 2500);
+      return fetch(url, ctl ? { signal: ctl.signal } : {}).then(function (r) { return r.ok ? r.text() : ""; }).then(pick).then(decide).catch(function () {});
+    };
+    get("https://www.cloudflare.com/cdn-cgi/trace", function (t) { var m = /(?:^|\n)loc=([A-Z]{2})/.exec(t); return m && m[1]; });
+    get("https://api.country.is/", function (t) { try { return JSON.parse(t).country; } catch (e) { return null; } });
+    get("https://get.geojs.io/v1/ip/country.json", function (t) { try { return JSON.parse(t).country; } catch (e) { return null; } });
+  }
+})();
+</script>
+</body>
+</html>

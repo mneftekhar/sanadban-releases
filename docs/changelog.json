@@ -1,0 +1,98 @@
+{
+  "note": "Single source of the changelog. The website reads this file; CHANGELOG.md is generated from it with: python tools/make_changelog.py",
+  "releases": [
+    {
+      "version": "0.2.1",
+      "date": "2026-11-12",
+      "codename": { "en": "Dodo", "fa": "دودو" },
+      "summary": {
+        "en": "One download for every Windows PC, and safer automatic updates.",
+        "fa": "یک فایل برای همهٔ رایانه‌های ویندوزی و به‌روزرسانی خودکارِ مطمئن‌تر."
+      },
+      "added": [
+        { "en": "One download for every Windows PC: SanadBan-0.2.1-win.zip starts the right program for an x64 or an ARM64 processor by itself.",
+          "fa": "یک فایل برای همهٔ رایانه‌های ویندوزی: SanadBan-0.2.1-win.zip خودش برنامهٔ مناسبِ پردازندهٔ x64 یا ARM64 را اجرا می‌کند." },
+        { "en": "Update watchdog: if a new version's background service cannot start, the previous version is put back by itself and the failed version is never offered to that PC again.",
+          "fa": "نگهبانِ به‌روزرسانی: اگر سرویس پس‌زمینهٔ نسخهٔ جدید راه نیفتد، نسخهٔ قبلی خودبه‌خود برگردانده می‌شود و آن نسخه دیگر به آن رایانه پیشنهاد نمی‌شود." }
+      ],
+      "changed": [
+        { "en": "An update now installs early only after 30 quiet minutes: not connected, not trying to reconnect, and no window open. Otherwise it waits for the next restart.",
+          "fa": "به‌روزرسانی فقط پس از ۳۰ دقیقه بی‌کاری زودتر نصب می‌شود: وصل نباشد، در حال اتصال دوباره نباشد و پنجره‌ای باز نباشد. در غیر این صورت تا راه‌اندازی بعدی صبر می‌کند." },
+        { "en": "Restoring the previous version is done by one part at a time, so two restores can never run together.",
+          "fa": "بازگردانی نسخهٔ قبلی هر بار فقط به دست یک بخش انجام می‌شود، تا هرگز دو بازگردانی هم‌زمان رخ ندهد." }
+      ],
+      "fixed": [
+        { "en": "An update could install while SanadBan was waiting between automatic reconnect attempts.",
+          "fa": "به‌روزرسانی ممکن بود در فاصلهٔ میان تلاش‌های اتصال دوبارهٔ خودکار نصب شود." },
+        { "en": "A half-finished restore left behind by an interrupted update is now set aside safely instead of blocking later updates.",
+          "fa": "بازگردانیِ نیمه‌کاره‌ای که از یک به‌روزرسانیِ قطع‌شده مانده، اکنون با اطمینان کنار گذاشته می‌شود و جلوی به‌روزرسانی‌های بعدی را نمی‌گیرد." }
+      ],
+      "removed": [
+        { "en": "Separate first-install downloads per processor. The per-processor files stay in each release for the automatic updates only.",
+          "fa": "فایل‌های جداگانهٔ نخستین نصب برای هر پردازنده. فایل‌های جداگانه فقط برای به‌روزرسانی خودکار در هر انتشار می‌مانند." }
+      ]
+    },
+    {
+      "version": "0.1.1",
+      "date": "2026-11-11",
+      "codename": { "en": "Dodo", "fa": "دودو" },
+      "summary": {
+        "en": "First version delivered by the automatic updater.",
+        "fa": "نخستین نسخه‌ای که با به‌روزرسانی خودکار رسید."
+      },
+      "added": [],
+      "changed": [
+        { "en": "Installed copies of 0.1.0 updated themselves to this version without anyone touching them.",
+          "fa": "نسخه‌های نصب‌شدهٔ ۰.۱.۰ بدون دخالت کسی خودشان به این نسخه به‌روز شدند." }
+      ],
+      "fixed": [
+        { "en": "Releases can be built on a PC that cannot reach the .NET package server.",
+          "fa": "ساختِ نسخه روی رایانه‌ای که به سرور بسته‌های ‎.NET‎ دسترسی ندارد هم ممکن شد." }
+      ],
+      "removed": []
+    },
+    {
+      "version": "0.1.0",
+      "date": "2026-11-11",
+      "codename": { "en": "Dodo", "fa": "دودو" },
+      "summary": {
+        "en": "First signed release. SanadBan replaces the separate Windows VPN entries and the SsarSplitTunnel scripts.",
+        "fa": "نخستین نسخهٔ امضاشده. سندبان جای اتصال‌های جداگانهٔ VPN ویندوز و اسکریپت‌های SsarSplitTunnel را می‌گیرد."
+      },
+      "added": [
+        { "en": "One window to connect, with the protocol each server accepts (SSTP, PPTP, L2TP/IPsec or IKEv2, all built into Windows).",
+          "fa": "یک پنجره برای اتصال، با پروتکلی که هر سرور می‌پذیرد (SSTP، PPTP، L2TP/IPsec یا IKEv2، همه از خودِ ویندوز)." },
+        { "en": "Split tunnel: only the registry's networks go through the VPN; registry names are looked up on the registry DNS while connected.",
+          "fa": "تفکیک ترافیک: فقط شبکه‌های سازمان ثبت از VPN عبور می‌کنند و نشانی‌های سازمان هنگام اتصال از DNS سازمان پرسیده می‌شوند." },
+        { "en": "Keep-alive checks, automatic reconnect, an optional kill switch, and IPv6 blocked while connected unless you allow it.",
+          "fa": "بررسیِ زنده بودن اتصال، اتصال دوبارهٔ خودکار، قطع ایمن اینترنت (اختیاری) و مسدود شدن IPv6 هنگام اتصال، مگر اینکه اجازه دهید." },
+        { "en": "Logins encrypted with the computer's key: one Default login for all servers, or one per server.",
+          "fa": "اطلاعات ورودِ رمزگذاری‌شده با کلید رایانه: یک اطلاعات ورودِ پیش‌فرض برای همهٔ سرورها یا یکی برای هر سرور." },
+        { "en": "Troubleshoot page that tests adapters, DNS, servers, internet and the VPN, and saves a report for support.",
+          "fa": "صفحهٔ عیب‌یابی که آداپتورها، DNS، سرورها، اینترنت و VPN را آزمایش می‌کند و گزارشی برای پشتیبانی ذخیره می‌کند." },
+        { "en": "Background service: administrator rights are needed once; the connection keeps going when the window is closed.",
+          "fa": "سرویس پس‌زمینه: دسترسی مدیر فقط یک بار لازم است و با بستن پنجره اتصال برقرار می‌ماند." },
+        { "en": "Silent automatic updates from this page, each one signed and checked before it is installed.",
+          "fa": "به‌روزرسانی خودکار و بی‌صدا از همین صفحه؛ هر نسخه امضا شده و پیش از نصب بررسی می‌شود." },
+        { "en": "Persian and English, light and dark, and a Guide that explains every page and the common Windows VPN errors (602, 691, 800, 809, 868).",
+          "fa": "فارسی و انگلیسی، روشن و تیره، و راهنمایی که همهٔ صفحه‌ها و خطاهای رایج VPN ویندوز (۶۰۲، ۶۹۱، ۸۰۰، ۸۰۹، ۸۶۸) را توضیح می‌دهد." }
+      ],
+      "changed": [
+        { "en": "The app formerly called Notary VPN Client is now SanadBan. Servers, logins and settings of an existing install are carried over.",
+          "fa": "برنامه‌ای که پیش‌تر Notary VPN Client نام داشت اکنون سندبان است. سرورها، اطلاعات ورود و تنظیماتِ نصبِ قبلی منتقل می‌شوند." },
+        { "en": "Every system message box was replaced by the app's own confirmation window, in the app's language and theme.",
+          "fa": "همهٔ پیام‌های سیستمی با پنجرهٔ تأییدِ خودِ برنامه، به زبان و پوستهٔ برنامه، جایگزین شدند." }
+      ],
+      "fixed": [
+        { "en": "The service no longer runs a request with the rights of the person who sent it.",
+          "fa": "سرویس دیگر درخواست را با دسترسیِ فرستندهٔ آن اجرا نمی‌کند." },
+        { "en": "A window crash at start, requests that could wait forever, and errors that closed the window without a trace.",
+          "fa": "بسته شدن پنجره هنگام شروع، درخواست‌هایی که ممکن بود بی‌پایان منتظر بمانند، و خطاهایی که پنجره را بی‌هیچ اثری می‌بستند." }
+      ],
+      "removed": [
+        { "en": "The old Notary VPN Client service: installing SanadBan removes it and its leftover DNS rules.",
+          "fa": "سرویس قدیمیِ Notary VPN Client: نصب سندبان آن را همراه قانون‌های DNSِ باقی‌مانده‌اش حذف می‌کند." }
+      ]
+    }
+  ]
+}
