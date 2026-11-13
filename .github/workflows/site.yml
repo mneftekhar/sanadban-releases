@@ -1,0 +1,79 @@
+# Keeps the website, the README, guides/ and CHANGELOG.md in step with the project:
+# rebuilds them from site/ and the published releases, deploys the website, and tells search engines what changed.
+name: Website and README
+
+on:
+  release:
+    types: [published, edited, deleted]
+  push:
+    branches: [main]
+    paths: ["site/**", "docs/assets/**", "docs/fonts/**", ".github/workflows/site.yml"]
+  schedule:
+    - cron: "17 2 * * *"      # once a day, in case a run was missed
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: site
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      site_changed: ${{ steps.build.outputs.site_changed }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build website, README, guides and changelog
+        id: build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python site/build.py
+      - name: Commit what changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A README.md CHANGELOG.md guides docs site/releases.json
+          if git diff --cached --quiet; then echo "Nothing to commit"; else
+            git commit -m "Update website and README from the current releases"
+            git push
+          fi
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
+
+  notify:
+    # IndexNow: Bing (and through it DuckDuckGo, Yahoo, Ecosia), Yandex, Naver, Seznam and Yep share each submission.
+    needs: [build, deploy]
+    if: needs.build.outputs.site_changed == 'true' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Submit the pages to IndexNow
+        run: |
+          KEY=$(python3 -c "import json;print(json.load(open('site/content.json'))['site']['indexnow_key'])")
+          BASE=$(python3 -c "import json;print(json.load(open('site/content.json'))['site']['url'])")
+          HOST=$(python3 -c "import urllib.parse,sys;print(urllib.parse.urlparse(sys.argv[1]).hostname)" "$BASE")
+          cat > body.json <<EOF
+          {"host":"$HOST","key":"$KEY","keyLocation":"${BASE}${KEY}.txt","urlList":["${BASE}","${BASE}en/"]}
+          EOF
+          curl -sS -o /dev/null -w "IndexNow: HTTP %{http_code}\n" -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json; charset=utf-8" --data @body.json

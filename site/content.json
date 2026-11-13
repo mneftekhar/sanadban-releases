@@ -1,0 +1,229 @@
+{
+  "_about": "The one source of every text on the website, the README and the guides/ pages. Edit here, push, and the workflow rebuilds everything. Inline markup: **bold**, `code`, [text](url).",
+
+  "site": {
+    "url": "https://mneftekhar.github.io/sanadban-releases/",
+    "repo": "mneftekhar/sanadban-releases",
+    "indexnow_key": "2c626971c07756d378ff8585ef4b60e3",
+    "google_site_verification": "",
+    "bing_site_verification": "",
+    "author": { "fa": "م. افتخار", "en": "M. Eftekhar" },
+    "github_user": "mneftekhar"
+  },
+
+  "name": { "fa": "سندبان", "en": "SanadBan" },
+  "alternate_names": ["SanadBan", "سندبان", "Sanadban", "Sanad Ban", "Notary VPN Client"],
+  "tagline": { "fa": "اتصال امن دفترخانه به شبکهٔ سازمان ثبت", "en": "Secure connection from notary offices to the registry network" },
+  "title": {
+    "fa": "سندبان | VPN دفترخانه برای اتصال به شبکهٔ سازمان ثبت اسناد و املاک",
+    "en": "SanadBan | VPN app connecting Iranian notary offices to the registry network"
+  },
+  "description": {
+    "fa": "سندبان برنامهٔ ویندوز برای اتصال دفاتر اسناد رسمی به شبکهٔ سازمان ثبت اسناد و املاک از راه VPN است: اتصال با یک دکمه، تفکیک ترافیک، اتصال دوبارهٔ خودکار، عیب‌یابی خطاهای VPN ویندوز و به‌روزرسانی خودکارِ امضاشده.",
+    "en": "SanadBan is a Windows app that connects Iranian notary offices (daftarkhaneh) to the registry network over VPN: one-press connect, split tunnel, automatic reconnect, Windows VPN error troubleshooting and signed automatic updates."
+  },
+  "independent": {
+    "fa": "سندبان پروژه‌ای مستقل است و ساخته یا وابسته به سازمان ثبت اسناد و املاک کشور نیست.",
+    "en": "SanadBan is an independent project; it is not made by or affiliated with Iran's Registration Organization of Deeds and Properties."
+  },
+
+  "nav": [
+    { "id": "features", "page": "features", "fa": "امکانات", "en": "Features" },
+    { "id": "screens", "page": "screenshots", "fa": "تصویرها", "en": "Screenshots" },
+    { "id": "install", "page": "install", "fa": "نصب", "en": "Install" },
+    { "id": "help", "page": "troubleshooting", "fa": "رفع مشکل", "en": "Troubleshooting" },
+    { "id": "faq", "page": "faq", "fa": "پرسش‌ها", "en": "FAQ" },
+    { "id": "roadmap", "page": "roadmap", "fa": "نقشهٔ راه", "en": "Roadmap" },
+    { "id": "changes", "page": "changelog", "fa": "تغییرات", "en": "Changelog" }
+  ],
+  "ui": {
+    "download": { "fa": "دریافت", "en": "Download" },
+    "download_windows": { "fa": "دریافت برای ویندوز", "en": "Download for Windows" },
+    "see_changes": { "fa": "ببینید چه چیزی تغییر کرده", "en": "See what changed" },
+    "fine": { "fa": "نسخهٔ {version}؛ یک فایل ({size}) برای ویندوز ۱۰ و ۱۱ روی x64 و ARM64. بدون حساب کاربری.", "en": "Version {version}, one file ({size}) for Windows 10 and 11 on x64 and ARM64. No account needed." },
+    "skip": { "fa": "رفتن به محتوا", "en": "Skip to content" },
+    "menu": { "fa": "فهرست", "en": "Menu" },
+    "home": { "fa": "خانه", "en": "Home" },
+    "website": { "fa": "وب‌سایت", "en": "Website" },
+    "other_lang": { "fa": "English", "en": "فارسی" },
+    "blurred": { "fa": "نام و نشانی سرورها و اطلاعات ورود در این تصویرها محو شده‌اند.", "en": "Server names, addresses and logins are blurred in these pictures." },
+    "full_changelog": { "fa": "تاریخچهٔ کامل تغییرات در GitHub", "en": "Full changelog on GitHub" },
+    "all_releases": { "fa": "همهٔ انتشارها در GitHub", "en": "All releases on GitHub" },
+    "latest": { "fa": "آخرین نسخه", "en": "Latest version" },
+    "released": { "fa": "منتشرشده در", "en": "released" },
+    "jump_en": { "fa": "English ↓", "en": "English ↓" },
+    "jump_fa": { "fa": "فارسی ↑", "en": "فارسی ↑" },
+    "signed": { "fa": "امضاشده", "en": "Signed" },
+    "connect_video": { "fa": "اتصال در سندبان: از «متصل نیست» تا «متصل» در چند ثانیه", "en": "Connecting in SanadBan: from Not connected to Connected in a few seconds" },
+    "tour": { "fa": "گشتی در همهٔ صفحه‌ها (GIF)", "en": "A tour of every page (GIF)" },
+    "generated": { "fa": "این صفحه از روی site/content.json ساخته می‌شود؛ آن را ویرایش کنید، نه این فایل را.", "en": "This page is generated from site/content.json; edit that file, not this one." }
+  },
+
+  "hero": {
+    "h1": { "fa": "اتصال مطمئن دفترخانه به شبکهٔ سازمان ثبت", "en": "A connection to the registry network your office can rely on" },
+    "lead": {
+      "fa": "سندبان با یک دکمه وصل می‌شود، فقط ترافیک سازمان را از VPN عبور می‌دهد، اتصال را زنده نگه می‌دارد و اگر ویندوز خطا بدهد، به زبان ساده می‌گوید چه شده و چه باید کرد.",
+      "en": "SanadBan connects with one press, sends only registry traffic through the VPN, keeps the connection alive, and when Windows reports an error it says in plain words what happened and what to do."
+    },
+    "about": {
+      "fa": "سندبان برنامه‌ای برای ویندوز است که رایانه‌های دفاتر اسناد رسمی را از راه سرورهای VPN سازمان ثبت اسناد و املاک به شبکهٔ سازمان وصل می‌کند. جای اتصال‌های جداگانهٔ VPN ویندوز و اسکریپت‌های SsarSplitTunnel را می‌گیرد.",
+      "en": "SanadBan is a Windows app that connects the computers of Iranian notary offices to the registry network through the registry's VPN servers. It replaces the separate Windows VPN entries and the SsarSplitTunnel scripts."
+    }
+  },
+
+  "features": {
+    "title": { "fa": "سندبان چه می‌کند", "en": "What SanadBan does" },
+    "items": [
+      { "term": { "fa": "یک دکمه برای اتصال", "en": "One press to connect" },
+        "text": { "fa": "برای هر سرور همان پروتکلی به‌کار می‌رود که آن سرور می‌پذیرد: SSTP، PPTP، L2TP/IPsec یا IKEv2؛ همه از خودِ ویندوز، بدون برنامهٔ اضافه.", "en": "Each server gets the protocol it accepts: SSTP, PPTP, L2TP/IPsec or IKEv2, all built into Windows, with nothing extra to install." } },
+      { "term": { "fa": "فقط ترافیک سازمان از VPN", "en": "Only registry traffic through the VPN" },
+        "text": { "fa": "اینترنتِ دفترخانه همان‌طور که بود می‌ماند و فقط شبکهٔ سازمان ثبت از VPN عبور می‌کند (تفکیک ترافیک یا Split tunnel). نشانی‌های سازمان هنگام اتصال از DNS سازمان پرسیده می‌شوند.", "en": "The office internet stays as it was; only the registry network goes through the VPN (split tunnel), and registry names are looked up on the registry DNS while connected." } },
+      { "term": { "fa": "اتصالی که برقرار می‌ماند", "en": "A connection that stays up" },
+        "text": { "fa": "زنده بودنِ اتصال مرتب بررسی می‌شود و اگر قطع شود، سندبان دوباره وصل می‌شود و هر بار کمی بیشتر صبر می‌کند. «قطع ایمن اینترنت» هم اگر بخواهید، ترافیک سازمان را تا برگشتنِ VPN نگه می‌دارد.", "en": "The connection is checked regularly and SanadBan reconnects when it drops, waiting a little longer each time. If you want, the kill switch holds registry traffic back until the VPN is up again." } },
+      { "term": { "fa": "رمز عبور در امان", "en": "Passwords kept safe" },
+        "text": { "fa": "اطلاعات ورود با کلید همین رایانه رمزگذاری می‌شود و فقط سرویس سندبان از آن استفاده می‌کند. یک اطلاعات ورود برای همهٔ سرورها کافی است.", "en": "Logins are encrypted with this computer's key and used only by the SanadBan service. One login can serve every server." } },
+      { "term": { "fa": "علت را پیدا می‌کند", "en": "Finds the cause" },
+        "text": { "fa": "«عیب‌یابی» آداپتورهای شبکه، DNS، سرورها، اینترنت و VPN را آزمایش می‌کند و گزارشی برای پشتیبانی می‌سازد. «راهنما» خطاهای رایج VPN ویندوز (۶۰۲، ۶۹۱، ۸۰۰، ۸۰۹، ۸۶۸) را یکی‌یکی توضیح می‌دهد.", "en": "Troubleshoot tests the network adapters, DNS, servers, internet and the VPN, and saves a report for support. The Guide explains the common Windows VPN errors (602, 691, 800, 809, 868) one by one." } },
+      { "term": { "fa": "دسترسی مدیر، فقط یک بار", "en": "Administrator rights, once" },
+        "text": { "fa": "سرویس پس‌زمینه یک بار نصب می‌شود. پس از آن می‌توانید پنجره را ببندید؛ اتصال از ناحیهٔ اعلان کنار ساعت برقرار می‌ماند.", "en": "The background service is installed once. After that you can close the window; the connection stays up from the notification area next to the clock." } },
+      { "term": { "fa": "خودش به‌روز می‌شود، با امضا", "en": "Updates itself, signed" },
+        "text": { "fa": "نسخهٔ جدید بی‌صدا از GitHub دریافت می‌شود، امضای توسعه‌دهنده بررسی می‌شود و وقتی رایانه بی‌کار است نصب می‌شود. اگر درست راه نیفتد، نسخهٔ قبلی برمی‌گردد.", "en": "New versions download quietly from GitHub, the developer's signature is checked, and they install while the computer is idle. If one does not start properly, the previous version comes back." } },
+      { "term": { "fa": "فارسی و انگلیسی", "en": "Persian and English" },
+        "text": { "fa": "فارسیِ کاملاً راست‌به‌چپ یا انگلیسی، با پوستهٔ روشن و تیره که از ویندوز پیروی می‌کند.", "en": "Fully right-to-left Persian or English, with light and dark themes that follow Windows." } }
+    ]
+  },
+
+  "split": {
+    "title": { "fa": "تفکیک ترافیک، به زبان ساده", "en": "Split tunnel, simply" },
+    "lead": { "fa": "فقط آنچه به سازمان ثبت مربوط است از VPN می‌رود؛ باقیِ کارهای دفترخانه سرعتِ اینترنتِ خودش را دارد. اگر بخواهید، شبکه‌ها و وب‌سایت‌های دیگری هم اضافه کنید یا همه‌چیز را از VPN بفرستید.", "en": "Only what belongs to the registry goes through the VPN; everything else the office does keeps the speed of its own internet. You can add networks and websites of your own, or send everything through the VPN." },
+    "pc": { "fa": "این رایانه", "en": "This computer" },
+    "reg": { "fa": "شبکهٔ سازمان ثبت", "en": "Registry network" },
+    "reg_via": { "fa": "از VPN", "en": "through the VPN" },
+    "other": { "fa": "سایت‌ها و برنامه‌های دیگر", "en": "Every other site and app" },
+    "other_via": { "fa": "از اینترنت خودتان", "en": "on your own internet" },
+    "label": { "fa": "فقط شبکهٔ سازمان ثبت از VPN می‌رود؛ باقی ترافیک از اینترنت خودتان.", "en": "Only the registry network goes through the VPN; other traffic uses your own internet." }
+  },
+
+  "screens": {
+    "title": { "fa": "صفحه‌های برنامه", "en": "Inside the app" },
+    "pages": [
+      { "id": "home", "name": { "fa": "خانه", "en": "Home" }, "what": { "fa": "اتصال، وضعیت، مدت اتصال و حجم ترافیک.", "en": "Connect, and see the state, time connected and traffic." } },
+      { "id": "servers", "name": { "fa": "سرورها", "en": "Servers" }, "what": { "fa": "سرورهای VPN که می‌توانید به آن‌ها وصل شوید، با سرعت هر کدام.", "en": "The VPN servers you can connect to, with the speed of each." } },
+      { "id": "logins", "name": { "fa": "اطلاعات ورود", "en": "Logins" }, "what": { "fa": "نام کاربری و رمز عبور VPN، رمزگذاری‌شده روی همین رایانه.", "en": "User names and passwords for the VPN, kept encrypted on this computer." } },
+      { "id": "split", "name": { "fa": "تفکیک ترافیک", "en": "Split tunnel" }, "what": { "fa": "تعیین کنید چه ترافیکی از VPN عبور کند و چه ترافیکی از اینترنت خودتان.", "en": "Choose what goes through the VPN and what stays on your own internet." } },
+      { "id": "checks", "name": { "fa": "عیب‌یابی", "en": "Troubleshoot" }, "what": { "fa": "آزمایش آداپتورها، DNS، سرورها، اینترنت و اتصال VPN، با گزارشی برای پشتیبانی.", "en": "Tests the adapters, DNS, servers, internet and the VPN, and saves a report for support." } },
+      { "id": "guide", "name": { "fa": "راهنما", "en": "Guide" }, "what": { "fa": "سندبان چگونه کار می‌کند؛ صفحه‌به‌صفحه و همهٔ گزینه‌ها.", "en": "How SanadBan works, page by page, and what every option does." } },
+      { "id": "settings", "name": { "fa": "تنظیمات", "en": "Settings" }, "what": { "fa": "زبان، پوسته، اتصال دوبارهٔ خودکار، قطع ایمن اینترنت و شروع با ویندوز.", "en": "Language, theme, automatic reconnect, kill switch and start-up." } },
+      { "id": "about", "name": { "fa": "درباره", "en": "About" }, "what": { "fa": "نسخه، توسعه‌دهنده و حریم خصوصی.", "en": "Version, developer and privacy." } }
+    ]
+  },
+
+  "install": {
+    "title": { "fa": "نصب در چهار گام", "en": "Install in four steps" },
+    "lead": { "fa": "این فایل فقط برای نخستین نصب است. نسخه‌های نصب‌شده خودشان به‌روز می‌شوند.", "en": "This file is only for the first install. Installed copies update themselves." },
+    "steps": [
+      { "fa": "فایل **SanadBan-{version}-win.zip** را دریافت و از حالت فشرده خارج کنید (راست‌کلیک، «استخراج همه»).", "en": "Download **SanadBan-{version}-win.zip** and unpack it (right-click it, then Extract All)." },
+      { "fa": "**SanadBan.exe** را در بالای پوشه باز کنید. خودش برنامهٔ مناسبِ پردازندهٔ رایانه (x64 یا ARM64) را اجرا می‌کند. نسخه‌های داخل پوشه‌های `x64` و `arm64` را مستقیم باز نکنید.", "en": "Open **SanadBan.exe** at the top of the folder. It starts the right program for the computer's processor (x64 or ARM64). Don't open the copies inside the `x64` and `arm64` folders yourself." },
+      { "fa": "در نوار زرد بالای پنجره **«نصب سرویس»** را بزنید و پیام ویندوز را تأیید کنید. این کار برای هر رایانه فقط یک بار لازم است.", "en": "Press **Install service** in the yellow bar at the top and approve the Windows prompt. This is needed once per computer." },
+      { "fa": "در «سرورها» **«افزودن سرورهای سازمان ثبت»**، در «اطلاعات ورود» نام کاربری و رمز عبور را وارد کنید و در «خانه» **«اتصال»** را بزنید.", "en": "On Servers press **Add registry servers**, on Logins add your user name and password, then press **Connect** on Home." }
+    ],
+    "needs": { "fa": "پیش‌نیاز: ویندوز ۱۰ یا ۱۱ (x64 یا ARM64) و [‎.NET 10 Desktop Runtime‎](https://dotnet.microsoft.com/download/dotnet/10.0) از مایکروسافت.", "en": "Needs Windows 10 or 11 (x64 or ARM64) and Microsoft's [.NET 10 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/10.0)." }
+  },
+
+  "help": {
+    "title": { "fa": "رفع مشکل‌های رایج", "en": "Common problems" },
+    "lead": { "fa": "همین توضیح‌ها در صفحهٔ «راهنما»ی خودِ برنامه هم هست. اگر چیزی کار نکرد، «عیب‌یابی» را اجرا کنید و «ذخیره برای پشتیبانی» را بزنید.", "en": "The same answers are in the app's own Guide page. If something does not work, run Troubleshoot and press Save for support." },
+    "items": [
+      { "q": { "fa": "گیر کردن روی «در حال برقراری ارتباط با سرور» یا خطای ۸۰۰ ویندوز", "en": "Stuck on \"Contacting the server\", or Windows error 800" },
+        "a": { "fa": "سرور پاسخ نمی‌دهد. معمولاً خاموش است، خارج از زمانِ در دسترس بودنش است، در این شبکه مسدود است یا روی پروتکلی تنظیم شده که نمی‌پذیرد. «عیب‌یابی» را اجرا کنید: بخش «سرورها» نشان می‌دهد کدام درگاه‌ها پاسخ می‌دهند.", "en": "The server does not answer. Usually it is switched off, outside the hours it is available, blocked on this network, or set to a protocol it does not accept. Run Troubleshoot: the Servers section shows which ports answer." } },
+      { "q": { "fa": "خطای ۶۹۱ (نام کاربری یا رمز عبور)", "en": "Error 691 (user name or password)" },
+        "a": { "fa": "نام کاربری یا رمز عبور پذیرفته نشد. آن‌ها را در صفحهٔ «اطلاعات ورود» بررسی کنید («تغییر» را بزنید و رمز را دوباره وارد کنید). اگر درست است، ممکن است حساب قفل یا منقضی شده باشد؛ از سازمان بپرسید.", "en": "The user name or password was not accepted. Check them on Logins (press Change and type the password again). If they are right, the account may be locked or expired; ask the registry." } },
+      { "q": { "fa": "خطای ۸۰۹", "en": "Error 809" },
+        "a": { "fa": "شبکهٔ میان این رایانه و سرور، اتصال را مسدود کرد. در PPTP و L2TP/IPsec پشت برخی مودم‌ها و ارائه‌دهندگان اینترنت رایج است؛ معمولاً سرورِ SSTP کار می‌کند.", "en": "The network between this computer and the server blocked the connection. Common with PPTP and L2TP/IPsec behind some routers and internet providers; an SSTP server usually works." } },
+      { "q": { "fa": "خطای ۸۶۸", "en": "Error 868" },
+        "a": { "fa": "نام سرور پیدا نشد. اتصال اینترنت را بررسی و «عیب‌یابی» را اجرا کنید؛ بخش DNS نشان می‌دهد کدام سرور DNS پاسخ نمی‌دهد.", "en": "The server's name could not be found. Check the internet connection and run Troubleshoot; the DNS section shows which DNS server fails." } },
+      { "q": { "fa": "خطای ۶۰۲", "en": "Error 602" },
+        "a": { "fa": "ویندوز گمان می‌کند یک درگاهِ اتصال از قبل باز است؛ معمولاً پس از اتصالی که درست بسته نشده. راه‌اندازی دوبارهٔ رایانه آن را برطرف می‌کند.", "en": "Windows thinks a connection port is already open, usually after an earlier connection did not close cleanly. Restarting the computer clears it." } },
+      { "q": { "fa": "«برای این سرور نام کاربری و رمز عبوری ذخیره نشده است»", "en": "\"No user name and password are saved for this server\"" },
+        "a": { "fa": "در صفحهٔ «اطلاعات ورود»، برای همهٔ سرورها یا همان سرور، اطلاعات ورود اضافه کنید.", "en": "Add a login on Logins, for all servers or for that server." } },
+      { "q": { "fa": "اتصال پس از مدتی بی‌کاری قطع می‌شود", "en": "The connection drops after a while with no activity" },
+        "a": { "fa": "مطمئن شوید «زنده نگه‌داشتن اتصال» روشن است (صفحهٔ «تفکیک ترافیک») و نشانی آن پاسخ می‌دهد («عیب‌یابی»، بخش «اتصال VPN»).", "en": "Make sure Keep the connection alive is on (Split tunnel page) and its address answers (Troubleshoot, VPN connection section)." } },
+      { "q": { "fa": "سایت‌های سازمان با نامشان باز نمی‌شوند", "en": "Registry websites do not open by name" },
+        "a": { "fa": "وصل شوید و «عیب‌یابی» را اجرا کنید: بخش «اتصال VPN» نشان می‌دهد قانون DNS سازمان فعال است یا نه.", "en": "Connect, then run Troubleshoot: the VPN connection section shows whether the registry DNS rule is active." } },
+      { "q": { "fa": "پس از قطع VPN، اینترنت از کار افتاد", "en": "The internet stopped working after the VPN dropped" },
+        "a": { "fa": "این کارِ «قطع ایمن اینترنت» برای محافظت از شماست. دوباره وصل شوید یا در صفحهٔ «خانه»، «اینترنت را تا اتصال بعدی آزاد کن» را بزنید.", "en": "That is the kill switch protecting you. Connect again, or press Allow internet until the next connection on Home." } }
+    ]
+  },
+
+  "faq": {
+    "title": { "fa": "پرسش‌های رایج", "en": "Frequently asked questions" },
+    "items": [
+      { "q": { "fa": "سندبان چیست و برای چه کسانی است؟", "en": "What is SanadBan, and who is it for?" },
+        "a": { "fa": "برنامه‌ای برای ویندوز که رایانه‌های دفاتر اسناد رسمی (دفترخانه‌ها) را از راه VPN به شبکهٔ سازمان ثبت اسناد و املاک وصل می‌کند؛ برای سردفتران، دفتریاران، کارکنان دفترخانه و پشتیبان‌های فنی آن‌ها.", "en": "A Windows app that connects the computers of Iranian notary offices to the network of the Registration Organization of Deeds and Properties over VPN; for notaries, their staff and the people who support them." } },
+      { "q": { "fa": "آیا سندبان محصول سازمان ثبت است؟", "en": "Is SanadBan made by the registry?" },
+        "a": { "fa": "خیر. سندبان را م. افتخار به‌صورت مستقل ساخته است و ساخته یا وابسته به سازمان ثبت اسناد و املاک کشور نیست. نام کاربری و رمز عبور VPN را همچنان سازمان به دفترخانه می‌دهد.", "en": "No. SanadBan is an independent project by M. Eftekhar and is not made by or affiliated with the Registration Organization. The VPN user name and password still come from the registry." } },
+      { "q": { "fa": "با کدام ویندوز کار می‌کند؟", "en": "Which Windows does it run on?" },
+        "a": { "fa": "ویندوز ۱۰ و ۱۱، روی رایانه‌های x64 (اینتل و AMD) و ARM64، با یک فایلِ مشترک. ‎.NET 10 Desktop Runtime‎ مایکروسافت هم باید نصب باشد.", "en": "Windows 10 and 11, on x64 (Intel and AMD) and ARM64 computers, from one shared file. Microsoft's .NET 10 Desktop Runtime must be installed too." } },
+      { "q": { "fa": "از کدام پروتکل‌های VPN پشتیبانی می‌کند؟", "en": "Which VPN protocols does it support?" },
+        "a": { "fa": "SSTP، PPTP، L2TP/IPsec و IKEv2؛ همان پروتکل‌هایی که خودِ ویندوز دارد. برای هر سرور همان پروتکلی به‌کار می‌رود که آن سرور می‌پذیرد.", "en": "SSTP, PPTP, L2TP/IPsec and IKEv2, the protocols built into Windows. Each server is used with the protocol it accepts." } },
+      { "q": { "fa": "آیا جای اسکریپت SsarSplitTunnel را می‌گیرد؟", "en": "Does it replace the SsarSplitTunnel script?" },
+        "a": { "fa": "بله؛ سندبان جای آن اسکریپت‌ها و اتصال‌های جداگانهٔ VPN ویندوز را می‌گیرد. گامی که رایانه‌ای را که پیش‌تر اسکریپت داشته به‌طور تمیز تحویل بگیرد در نقشهٔ راه است.", "en": "Yes; SanadBan replaces those scripts and the separate Windows VPN entries. A step that cleanly takes over a computer that ran the script is on the roadmap." } },
+      { "q": { "fa": "رمز عبور من کجا نگه داشته می‌شود؟", "en": "Where is my password kept?" },
+        "a": { "fa": "روی همان رایانه، رمزگذاری‌شده با کلیدِ رایانه، و فقط سرویس سندبان از آن استفاده می‌کند. جز به سرور VPN هنگام اتصال، به هیچ جا فرستاده نمی‌شود.", "en": "On that computer, encrypted with the computer's key, and used only by the SanadBan service. It is never sent anywhere except to the VPN server while connecting." } },
+      { "q": { "fa": "سندبان چطور به‌روز می‌شود؟", "en": "How does SanadBan update?" },
+        "a": { "fa": "خودکار و بی‌صدا. سرویس پس‌زمینه نسخهٔ جدید را از همین صفحهٔ GitHub دریافت می‌کند، امضای توسعه‌دهنده را بررسی می‌کند و هنگام بی‌کاری یا راه‌اندازی دوباره نصب می‌کند؛ هرگز در میانهٔ اتصال.", "en": "Automatically and quietly. The background service downloads new versions from this GitHub page, checks the developer's signature and installs while idle or at the next restart, never during a connection." } },
+      { "q": { "fa": "نسخهٔ لینوکس دارد؟", "en": "Is there a Linux version?" },
+        "a": { "fa": "هنوز نه. پس از آزمایشِ کاملِ نسخهٔ ویندوز، نسخهٔ لینوکس با همین طراحی برای Ubuntu، Mint و Arch ساخته می‌شود.", "en": "Not yet. Once the Windows version is fully tested, a Linux version with the same design will follow for Ubuntu, Mint and Arch." } }
+    ]
+  },
+
+  "roadmap": {
+    "title": { "fa": "نقشهٔ راه", "en": "Roadmap" },
+    "lead": { "fa": "وضعیت امروزِ پروژه. با هر نسخه و هر گامِ تازه به‌روز می‌شود.", "en": "Where the project stands today. Updated with every release and every new step." },
+    "states": {
+      "done": { "fa": "انجام شد", "en": "Done" },
+      "now": { "fa": "در جریان", "en": "In progress" },
+      "next": { "fa": "بعدی", "en": "Next" }
+    },
+    "items": [
+      { "state": "done", "fa": "برنامهٔ ویندوز با سرویس پس‌زمینه، فارسی و انگلیسی، برای x64 و ARM64 با یک فایل", "en": "Windows app with a background service, Persian and English, for x64 and ARM64 from one file" },
+      { "state": "done", "fa": "به‌روزرسانی خودکارِ امضاشده از GitHub، با بازگرداندنِ خودکارِ نسخهٔ قبلی", "en": "Signed automatic updates from GitHub, with the previous version restored automatically" },
+      { "state": "now", "fa": "آزمایش در دفترخانه: اتصال واقعی، تفکیک ترافیک، زنده نگه‌داشتن اتصال و قطع ایمن اینترنت روی رایانه‌های x64", "en": "Field testing in offices: a real connection, split tunnel, keep-alive and the kill switch on x64 computers" },
+      { "state": "next", "fa": "تحویلِ تمیزِ رایانه‌هایی که اسکریپت SsarSplitTunnel داشتند", "en": "A clean takeover of computers that ran the SsarSplitTunnel script" },
+      { "state": "next", "fa": "نسخهٔ لینوکس (Ubuntu، Mint، Arch) با بسته‌های AppImage، deb، Flatpak و Snap برای amd64 و arm64", "en": "Linux version (Ubuntu, Mint, Arch) as AppImage, deb, Flatpak and Snap for amd64 and arm64" }
+    ]
+  },
+
+  "changes": {
+    "title": { "fa": "چه چیزی تغییر کرده", "en": "What changed" },
+    "kinds": {
+      "added": { "fa": "افزوده شد", "en": "Added" },
+      "changed": { "fa": "تغییر کرد", "en": "Changed" },
+      "fixed": { "fa": "رفع شد", "en": "Fixed" },
+      "removed": { "fa": "حذف شد", "en": "Removed" }
+    },
+    "intro": { "fa": "همهٔ نسخه‌های منتشرشدهٔ سندبان. نسخه‌های نصب‌شده خودشان به‌روز می‌شوند.", "en": "Every published version of SanadBan. Installed copies update themselves." }
+  },
+
+  "updates": {
+    "title": { "fa": "به‌روزرسانی و امنیت", "en": "Updates and security" },
+    "items": [
+      { "fa": "سرویس پس‌زمینه چند دقیقه پس از روشن شدنِ ویندوز و سپس هر چند ساعت یک بار وجود نسخهٔ جدید را بررسی می‌کند.", "en": "The background service checks for a new version a few minutes after Windows starts and then every few hours." },
+      { "fa": "هر رایانه فقط به‌روزرسانیِ مخصوص پردازندهٔ خودش (x64 یا ARM64) را دریافت می‌کند. فایلِ واحدِ `SanadBan-<نسخه>-win.zip` فقط برای نخستین نصب است.", "en": "Each computer downloads only the update made for its own processor (x64 or ARM64). The one file `SanadBan-<version>-win.zip` is only for the first install." },
+      { "fa": "پیش از هر استفاده، سندبان بررسی می‌کند که نسخه با کلید خصوصیِ توسعه‌دهنده امضا شده باشد و همهٔ فایل‌ها دقیقاً همان فایل‌های امضاشده باشند. فایلی که رد شود پاک می‌شود و هرگز اجرا نمی‌شود.", "en": "Before anything is used, SanadBan checks that the version was signed with the developer's private key and that every file is exactly the one that was signed. A file that fails is deleted and never run." },
+      { "fa": "نسخهٔ جدید در راه‌اندازیِ بعدیِ سرویس نصب می‌شود، یا زودتر وقتی سندبان ۳۰ دقیقه استفاده نشده باشد؛ هرگز در میانهٔ اتصال یا اتصال دوبارهٔ خودکار. اگر درست شروع به کار نکند، نسخهٔ قبلی خودکار برگردانده می‌شود.", "en": "The new version installs the next time the service starts, or earlier once SanadBan has not been used for 30 minutes; never during a connection or an automatic reconnect. If it does not start correctly, the previous version is put back automatically." }
+    ]
+  },
+
+  "privacy": {
+    "title": { "fa": "حریم خصوصی", "en": "Privacy" },
+    "text": { "fa": "اطلاعات ورودِ شما روی همین رایانه رمزگذاری می‌شود و از آن خارج نمی‌شود. گزارش‌ها هم روی همین رایانه می‌مانند. سندبان فقط برای اتصال به سرورهای VPN و بررسی به‌روزرسانی به اینترنت وصل می‌شود؛ «عیب‌یابی» هم فقط هنگام اجرای آزمایش از DNS عمومی و چند وب‌سایت عمومی پرسش می‌کند.", "en": "Your logins are encrypted on this computer and never leave it. Logs and reports are kept on this computer. SanadBan contacts the internet only to reach the VPN servers and to check for updates; Troubleshoot also asks public DNS and a few public websites, only while the tests run." }
+  },
+
+  "developer": {
+    "title": { "fa": "دربارهٔ توسعه‌دهنده", "en": "About the developer" },
+    "text": { "fa": "سندبان را م. افتخار به‌صورت مستقل ساخته است؛ از سرِ احترام به سردفتران ایران، تا هر دفترخانه اتصالی مطمئن به شبکهٔ سازمان ثبت داشته باشد و با خیال آسوده به کار خود برسد.", "en": "SanadBan is an independent project by M. Eftekhar. It was made out of respect for Iran's notaries, so that every notary office has a connection to the registry network it can rely on, and can simply get on with its work." },
+    "fonts": { "fa": "قلم‌ها: وزیرمتن اثر صابر راستی‌کردار و Space Grotesk اثر Florian Karsten، هر دو با مجوز SIL Open Font License 1.1.", "en": "Fonts: Vazirmatn by Saber Rastikerdar and Space Grotesk by Florian Karsten, both under the SIL Open Font License 1.1." },
+    "source": { "fa": "کد منبع خصوصی است؛ این مخزن نسخه‌های امضاشده، تغییرات و وب‌سایت را نگه می‌دارد.", "en": "The source code is private; this repository holds the signed releases, the changelog and the website." }
+  }
+}

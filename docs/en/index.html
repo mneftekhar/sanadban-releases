@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SanadBan | VPN app connecting Iranian notary offices to the registry network</title>
+<meta name="description" content="SanadBan is a Windows app that connects Iranian notary offices (daftarkhaneh) to the registry network over VPN: one-press connect, split tunnel, automatic reconnect, Windows VPN error troubleshooting and signed automatic updates.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="M. Eftekhar">
+<link rel="canonical" href="https://mneftekhar.github.io/sanadban-releases/en/">
+<link rel="alternate" hreflang="fa" href="https://mneftekhar.github.io/sanadban-releases/">
+<link rel="alternate" hreflang="en" href="https://mneftekhar.github.io/sanadban-releases/en/">
+<link rel="alternate" hreflang="x-default" href="https://mneftekhar.github.io/sanadban-releases/">
+<link rel="alternate" type="application/atom+xml" title="SanadBan releases" href="https://github.com/mneftekhar/sanadban-releases/releases.atom">
+<meta name="theme-color" content="#0F4C5C">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SanadBan">
+<meta property="og:title" content="SanadBan | VPN app connecting Iranian notary offices to the registry network">
+<meta property="og:description" content="SanadBan is a Windows app that connects Iranian notary offices (daftarkhaneh) to the registry network over VPN: one-press connect, split tunnel, automatic reconnect, Windows VPN error troubleshooting and signed automatic updates.">
+<meta property="og:url" content="https://mneftekhar.github.io/sanadban-releases/en/">
+<meta property="og:image" content="https://mneftekhar.github.io/sanadban-releases/assets/social.png">
+<meta property="og:image:width" content="1280"><meta property="og:image:height" content="640">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="fa_IR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/favicon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="../assets/icon-512.png">
+<link rel="preload" href="../fonts/Vazirmatn-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"SoftwareApplication","name":"SanadBan","alternateName":["سندبان","Sanadban","Sanad Ban","Notary VPN Client"],"description":"SanadBan is a Windows app that connects Iranian notary offices (daftarkhaneh) to the registry network over VPN: one-press connect, split tunnel, automatic reconnect, Windows VPN error troubleshooting and signed automatic updates.","url":"https://mneftekhar.github.io/sanadban-releases/en/","inLanguage":"en","applicationCategory":"SecurityApplication","applicationSubCategory":"VPN client","operatingSystem":"Windows 10, Windows 11","processorRequirements":"x64, ARM64","softwareRequirements":".NET 10 Desktop Runtime","softwareVersion":"0.2.1","datePublished":"2026-11-12","downloadUrl":"https://github.com/mneftekhar/sanadban-releases/releases/download/v0.2.1/SanadBan-0.2.1-win.zip","releaseNotes":"https://mneftekhar.github.io/sanadban-releases/en/#changes","screenshot":"https://mneftekhar.github.io/sanadban-releases/assets/home-en.webp","author":{"@type":"Person","name":"M. Eftekhar","url":"https://github.com/mneftekhar"},"image":"https://mneftekhar.github.io/sanadban-releases/assets/icon-512.png"},{"@context":"https://schema.org","@type":"FAQPage","inLanguage":"en","mainEntity":[{"@type":"Question","name":"What is SanadBan, and who is it for?","acceptedAnswer":{"@type":"Answer","text":"A Windows app that connects the computers of Iranian notary offices to the network of the Registration Organization of Deeds and Properties over VPN; for notaries, their staff and the people who support them."}},{"@type":"Question","name":"Is SanadBan made by the registry?","acceptedAnswer":{"@type":"Answer","text":"No. SanadBan is an independent project by M. Eftekhar and is not made by or affiliated with the Registration Organization. The VPN user name and password still come from the registry."}},{"@type":"Question","name":"Which Windows does it run on?","acceptedAnswer":{"@type":"Answer","text":"Windows 10 and 11, on x64 (Intel and AMD) and ARM64 computers, from one shared file. Microsoft's .NET 10 Desktop Runtime must be installed too."}},{"@type":"Question","name":"Which VPN protocols does it support?","acceptedAnswer":{"@type":"Answer","text":"SSTP, PPTP, L2TP/IPsec and IKEv2, the protocols built into Windows. Each server is used with the protocol it accepts."}},{"@type":"Question","name":"Does it replace the SsarSplitTunnel script?","acceptedAnswer":{"@type":"Answer","text":"Yes; SanadBan replaces those scripts and the separate Windows VPN entries. A step that cleanly takes over a computer that ran the script is on the roadmap."}},{"@type":"Question","name":"Where is my password kept?","acceptedAnswer":{"@type":"Answer","text":"On that computer, encrypted with the computer's key, and used only by the SanadBan service. It is never sent anywhere except to the VPN server while connecting."}},{"@type":"Question","name":"How does SanadBan update?","acceptedAnswer":{"@type":"Answer","text":"Automatically and quietly. The background service downloads new versions from this GitHub page, checks the developer's signature and installs while idle or at the next restart, never during a connection."}},{"@type":"Question","name":"Is there a Linux version?","acceptedAnswer":{"@type":"Answer","text":"Not yet. Once the Windows version is fully tested, a Linux version with the same design will follow for Ubuntu, Mint and Arch."}},{"@type":"Question","name":"Stuck on \"Contacting the server\", or Windows error 800","acceptedAnswer":{"@type":"Answer","text":"The server does not answer. Usually it is switched off, outside the hours it is available, blocked on this network, or set to a protocol it does not accept. Run Troubleshoot: the Servers section shows which ports answer."}},{"@type":"Question","name":"Error 691 (user name or password)","acceptedAnswer":{"@type":"Answer","text":"The user name or password was not accepted. Check them on Logins (press Change and type the password again). If they are right, the account may be locked or expired; ask the registry."}},{"@type":"Question","name":"Error 809","acceptedAnswer":{"@type":"Answer","text":"The network between this computer and the server blocked the connection. Common with PPTP and L2TP/IPsec behind some routers and internet providers; an SSTP server usually works."}},{"@type":"Question","name":"Error 868","acceptedAnswer":{"@type":"Answer","text":"The server's name could not be found. Check the internet connection and run Troubleshoot; the DNS section shows which DNS server fails."}},{"@type":"Question","name":"Error 602","acceptedAnswer":{"@type":"Answer","text":"Windows thinks a connection port is already open, usually after an earlier connection did not close cleanly. Restarting the computer clears it."}},{"@type":"Question","name":"\"No user name and password are saved for this server\"","acceptedAnswer":{"@type":"Answer","text":"Add a login on Logins, for all servers or for that server."}},{"@type":"Question","name":"The connection drops after a while with no activity","acceptedAnswer":{"@type":"Answer","text":"Make sure Keep the connection alive is on (Split tunnel page) and its address answers (Troubleshoot, VPN connection section)."}},{"@type":"Question","name":"Registry websites do not open by name","acceptedAnswer":{"@type":"Answer","text":"Connect, then run Troubleshoot: the VPN connection section shows whether the registry DNS rule is active."}},{"@type":"Question","name":"The internet stopped working after the VPN dropped","acceptedAnswer":{"@type":"Answer","text":"That is the kill switch protecting you. Connect again, or press Allow internet until the next connection on Home."}}]},{"@context":"https://schema.org","@type":"WebSite","name":"SanadBan","alternateName":["SanadBan","سندبان","Sanadban","Sanad Ban","Notary VPN Client"],"url":"https://mneftekhar.github.io/sanadban-releases/en/","inLanguage":"en"}]</script>
+<script>
+/* Persian for visitors from Iran, English elsewhere. A language chosen on this site always wins. Crawlers are never
+   redirected, so each language keeps its own address in search results. */
+(function () {
+  var here = "en", other = "../", d = document.documentElement;
+  if (/bot|crawl|spider|slurp|duckduck|bingpreview|yandex|baidu|lighthouse|preview|facebookexternalhit|telegram|whatsapp/i.test(navigator.userAgent)) return;
+  var get = function (s, k) { try { return window[s].getItem(k); } catch (e) { return null; } };
+  var put = function (s, k, v) { try { window[s].setItem(k, v); } catch (e) {} };
+  var go = function (l) { if (l && l !== here) location.replace(other + location.hash); };
+  var chosen = get("localStorage", "sb-lang") || get("sessionStorage", "sb-geo");
+  if (chosen) { go(chosen); return; }
+  d.className = "pending"; setTimeout(function () { d.className = ""; }, 1300);
+  var done = false;
+  function decide(cc) {
+    if (done || !cc) return; done = true;
+    var l = String(cc).toUpperCase() === "IR" ? "fa" : "en";
+    put("sessionStorage", "sb-geo", l);
+    if (l !== here) go(l); else d.className = "";
+  }
+  function ask(url, pick) {
+    var c = window.AbortController ? new AbortController() : null;
+    if (c) setTimeout(function () { c.abort(); }, 2500);
+    fetch(url, c ? { signal: c.signal } : {}).then(function (r) { return r.ok ? r.text() : ""; }).then(pick).then(decide).catch(function () {});
+  }
+  ask("https://www.cloudflare.com/cdn-cgi/trace", function (s) { var m = /(?:^|\n)loc=([A-Z]{2})/.exec(s); return m && m[1]; });
+  ask("https://api.country.is/", function (s) { try { return JSON.parse(s).country; } catch (e) { return null; } });
+  ask("https://get.geojs.io/v1/ip/country.json", function (s) { try { return JSON.parse(s).country; } catch (e) { return null; } });
+})();
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="wrap bar">
+  <a class="mark" href="../en/" aria-label="SanadBan">
+    <img src="../assets/logo.svg" alt="" width="40" height="40">
+    <span class="word">Sanad<b>Ban</b></span>
+  </a>
+  <nav class="nav" aria-label="Menu"><a href="#features">Features</a><a href="#screens">Screenshots</a><a href="#install">Install</a><a href="#help">Troubleshooting</a><a href="#faq">FAQ</a><a href="#roadmap">Roadmap</a><a href="#changes">Changelog</a></nav>
+  <span class="spacer"></span>
+  <details class="menu"><summary>Menu</summary><nav class="drop" aria-label="Menu"><a href="#features">Features</a><a href="#screens">Screenshots</a><a href="#install">Install</a><a href="#help">Troubleshooting</a><a href="#faq">FAQ</a><a href="#roadmap">Roadmap</a><a href="#changes">Changelog</a></nav></details>
+  <div class="lang" role="group" aria-label="Language / زبان"><a href="../" lang="fa" hreflang="fa" data-go="fa">فارسی</a><span lang="en">English</span></div>
+  <a class="btn get" href="https://github.com/mneftekhar/sanadban-releases/releases/download/v0.2.1/SanadBan-0.2.1-win.zip">Download</a>
+</header>
+
+<main id="main">
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>A connection to the registry network your office can rely on</h1>
+      <p class="lead">SanadBan connects with one press, sends only registry traffic through the VPN, keeps the connection alive, and when Windows reports an error it says in plain words what happened and what to do.</p>
+      <div class="cta">
+        <a class="btn" href="https://github.com/mneftekhar/sanadban-releases/releases/download/v0.2.1/SanadBan-0.2.1-win.zip">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 5.5 10 4.5v7H3zm0 13 7 1v-7H3zm8 1.1L21 21v-8.5H11zM11 4.4 21 3v8.5H11z"/></svg>
+          Download for Windows
+        </a>
+        <a href="#changes">See what changed</a>
+      </div>
+      <p class="fine">Version 0.2.1, one file (5 MB) for Windows 10 and 11 on x64 and ARM64. No account needed.</p>
+    </div>
+    <div class="stage">
+      <svg class="rosette" viewBox="-200 -200 400 400" aria-hidden="true"></svg>
+      <div class="window">
+        <video class="js-video" src="../assets/connect-en.mp4" width="1000" height="612" muted loop playsinline preload="metadata"
+               poster="../assets/home-en.webp" aria-label="Connecting in SanadBan: from Not connected to Connected in a few seconds"></video>
+      </div>
+      <svg class="seal" viewBox="0 0 120 120" role="img" aria-label="Signed">
+        <circle cx="60" cy="60" r="56" fill="#E09F3E"/>
+        <circle cx="60" cy="60" r="51" fill="none" stroke="#FFF6E8" stroke-width="1.2" stroke-dasharray="1.5 3"/>
+        <circle cx="60" cy="60" r="45" fill="none" stroke="#FFF6E8" stroke-width=".8"/>
+        <g transform="translate(44.5 27) scale(.26)">
+          <path d="M60 6 L104 22 V58 C104 86 84 105 60 114 C36 105 16 86 16 58 V22 Z" fill="#FFF6E8"/>
+          <path d="M44 34 H68 L80 46 V82 a4 4 0 0 1 -4 4 H44 a4 4 0 0 1 -4 -4 V38 a4 4 0 0 1 4 -4 Z" fill="#B8761F"/>
+        </g>
+        <text x="60" y="82" text-anchor="middle" style="font:700 15px "Space Grotesk", sans-serif;fill:#FFF6E8">Signed</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="does" id="features" aria-labelledby="features-h">
+  <div class="wrap">
+    <h2 id="features-h">What SanadBan does</h2>
+    <p class="lead" style="margin-bottom:2.5rem">SanadBan is a Windows app that connects the computers of Iranian notary offices to the registry network through the registry&#x27;s VPN servers. It replaces the separate Windows VPN entries and the SsarSplitTunnel scripts.</p>
+    <dl class="clauses"><div class="clause"><dt>One press to connect</dt><dd>Each server gets the protocol it accepts: SSTP, PPTP, L2TP/IPsec or IKEv2, all built into Windows, with nothing extra to install.</dd></div><div class="clause"><dt>Only registry traffic through the VPN</dt><dd>The office internet stays as it was; only the registry network goes through the VPN (split tunnel), and registry names are looked up on the registry DNS while connected.</dd></div><div class="clause"><dt>A connection that stays up</dt><dd>The connection is checked regularly and SanadBan reconnects when it drops, waiting a little longer each time. If you want, the kill switch holds registry traffic back until the VPN is up again.</dd></div><div class="clause"><dt>Passwords kept safe</dt><dd>Logins are encrypted with this computer&#x27;s key and used only by the SanadBan service. One login can serve every server.</dd></div><div class="clause"><dt>Finds the cause</dt><dd>Troubleshoot tests the network adapters, DNS, servers, internet and the VPN, and saves a report for support. The Guide explains the common Windows VPN errors (602, 691, 800, 809, 868) one by one.</dd></div><div class="clause"><dt>Administrator rights, once</dt><dd>The background service is installed once. After that you can close the window; the connection stays up from the notification area next to the clock.</dd></div><div class="clause"><dt>Updates itself, signed</dt><dd>New versions download quietly from GitHub, the developer&#x27;s signature is checked, and they install while the computer is idle. If one does not start properly, the previous version comes back.</dd></div><div class="clause"><dt>Persian and English</dt><dd>Fully right-to-left Persian or English, with light and dark themes that follow Windows.</dd></div></dl>
+  </div>
+</section>
+
+<section class="split" aria-labelledby="split-h">
+  <div class="wrap">
+    <div>
+      <h2 id="split-h">Split tunnel, simply</h2>
+      <p class="lead">Only what belongs to the registry goes through the VPN; everything else the office does keeps the speed of its own internet. You can add networks and websites of your own, or send everything through the VPN.</p>
+    </div>
+    <div class="lanes" role="img" aria-label="Only the registry network goes through the VPN; other traffic uses your own internet.">
+      <div class="pc">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M3 5h18v11H3zM8 20h8M12 16v4"/></svg>
+        <span class="node">This computer</span>
+      </div>
+      <div class="lane vpn"><img class="shield" src="../assets/logo.svg" alt=""></div>
+      <div class="node reg">Registry network<small>through the VPN</small></div>
+      <div class="lane"></div>
+      <div class="node">Every other site and app<small>on your own internet</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="inside" id="screens" aria-labelledby="screens-h">
+  <div class="wrap">
+    <h2 id="screens-h">Inside the app</h2>
+    <div class="viewer">
+      <div class="tabs" role="tablist" aria-orientation="vertical"><button type="button" role="tab" id="tab-home" aria-selected="true" tabindex="0" data-id="home" data-what="Connect, and see the state, time connected and traffic." data-alt="Home">Home</button><button type="button" role="tab" id="tab-servers" aria-selected="false" tabindex="-1" data-id="servers" data-what="The VPN servers you can connect to, with the speed of each." data-alt="Servers">Servers</button><button type="button" role="tab" id="tab-logins" aria-selected="false" tabindex="-1" data-id="logins" data-what="User names and passwords for the VPN, kept encrypted on this computer." data-alt="Logins">Logins</button><button type="button" role="tab" id="tab-split" aria-selected="false" tabindex="-1" data-id="split" data-what="Choose what goes through the VPN and what stays on your own internet." data-alt="Split tunnel">Split tunnel</button><button type="button" role="tab" id="tab-checks" aria-selected="false" tabindex="-1" data-id="checks" data-what="Tests the adapters, DNS, servers, internet and the VPN, and saves a report for support." data-alt="Troubleshoot">Troubleshoot</button><button type="button" role="tab" id="tab-guide" aria-selected="false" tabindex="-1" data-id="guide" data-what="How SanadBan works, page by page, and what every option does." data-alt="Guide">Guide</button><button type="button" role="tab" id="tab-settings" aria-selected="false" tabindex="-1" data-id="settings" data-what="Language, theme, automatic reconnect, kill switch and start-up." data-alt="Settings">Settings</button><button type="button" role="tab" id="tab-about" aria-selected="false" tabindex="-1" data-id="about" data-what="Version, developer and privacy." data-alt="About">About</button></div>
+      <div class="shot" role="tabpanel" aria-labelledby="tab-home">
+        <figure>
+          <div class="window"><img class="js-shot" src="../assets/home-en.webp" alt="Home" width="1600" height="978" loading="lazy"></div>
+          <figcaption><span class="what js-what">Connect, and see the state, time connected and traffic.</span><span class="blurred">Server names, addresses and logins are blurred in these pictures.</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="install" id="install" aria-labelledby="install-h">
+  <div class="wrap">
+    <div>
+      <h2 id="install-h">Install in four steps</h2>
+      <p class="lead" style="margin-top:1rem">This file is only for the first install. Installed copies update themselves.</p>
+      <p class="cta"><a class="btn" href="https://github.com/mneftekhar/sanadban-releases/releases/download/v0.2.1/SanadBan-0.2.1-win.zip">Download for Windows</a></p>
+    </div>
+    <div>
+      <ol class="steps"><li><span>Download <b>SanadBan-0.2.1-win.zip</b> and unpack it (right-click it, then Extract All).</span></li><li><span>Open <b>SanadBan.exe</b> at the top of the folder. It starts the right program for the computer&#x27;s processor (x64 or ARM64). Don&#x27;t open the copies inside the <code dir="ltr">x64</code> and <code dir="ltr">arm64</code> folders yourself.</span></li><li><span>Press <b>Install service</b> in the yellow bar at the top and approve the Windows prompt. This is needed once per computer.</span></li><li><span>On Servers press <b>Add registry servers</b>, on Logins add your user name and password, then press <b>Connect</b> on Home.</span></li></ol>
+      <p class="needs">Needs Windows 10 or 11 (x64 or ARM64) and Microsoft&#x27;s <a href="https://dotnet.microsoft.com/download/dotnet/10.0" rel="noopener">.NET 10 Desktop Runtime</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="help" id="help" aria-labelledby="help-h">
+  <div class="wrap twin">
+    <div>
+      <h2 id="help-h">Common problems</h2>
+      <p class="lead" style="margin-top:1rem">The same answers are in the app&#x27;s own Guide page. If something does not work, run Troubleshoot and press Save for support.</p>
+      <div class="qa"><details><summary>Stuck on &quot;Contacting the server&quot;, or Windows error 800</summary><p>The server does not answer. Usually it is switched off, outside the hours it is available, blocked on this network, or set to a protocol it does not accept. Run Troubleshoot: the Servers section shows which ports answer.</p></details><details><summary>Error 691 (user name or password)</summary><p>The user name or password was not accepted. Check them on Logins (press Change and type the password again). If they are right, the account may be locked or expired; ask the registry.</p></details><details><summary>Error 809</summary><p>The network between this computer and the server blocked the connection. Common with PPTP and L2TP/IPsec behind some routers and internet providers; an SSTP server usually works.</p></details><details><summary>Error 868</summary><p>The server&#x27;s name could not be found. Check the internet connection and run Troubleshoot; the DNS section shows which DNS server fails.</p></details><details><summary>Error 602</summary><p>Windows thinks a connection port is already open, usually after an earlier connection did not close cleanly. Restarting the computer clears it.</p></details><details><summary>&quot;No user name and password are saved for this server&quot;</summary><p>Add a login on Logins, for all servers or for that server.</p></details><details><summary>The connection drops after a while with no activity</summary><p>Make sure Keep the connection alive is on (Split tunnel page) and its address answers (Troubleshoot, VPN connection section).</p></details><details><summary>Registry websites do not open by name</summary><p>Connect, then run Troubleshoot: the VPN connection section shows whether the registry DNS rule is active.</p></details><details><summary>The internet stopped working after the VPN dropped</summary><p>That is the kill switch protecting you. Connect again, or press Allow internet until the next connection on Home.</p></details></div>
+    </div>
+    <div id="faq">
+      <h2>Frequently asked questions</h2>
+      <div class="qa"><details><summary>What is SanadBan, and who is it for?</summary><p>A Windows app that connects the computers of Iranian notary offices to the network of the Registration Organization of Deeds and Properties over VPN; for notaries, their staff and the people who support them.</p></details><details><summary>Is SanadBan made by the registry?</summary><p>No. SanadBan is an independent project by M. Eftekhar and is not made by or affiliated with the Registration Organization. The VPN user name and password still come from the registry.</p></details><details><summary>Which Windows does it run on?</summary><p>Windows 10 and 11, on x64 (Intel and AMD) and ARM64 computers, from one shared file. Microsoft&#x27;s .NET 10 Desktop Runtime must be installed too.</p></details><details><summary>Which VPN protocols does it support?</summary><p>SSTP, PPTP, L2TP/IPsec and IKEv2, the protocols built into Windows. Each server is used with the protocol it accepts.</p></details><details><summary>Does it replace the SsarSplitTunnel script?</summary><p>Yes; SanadBan replaces those scripts and the separate Windows VPN entries. A step that cleanly takes over a computer that ran the script is on the roadmap.</p></details><details><summary>Where is my password kept?</summary><p>On that computer, encrypted with the computer&#x27;s key, and used only by the SanadBan service. It is never sent anywhere except to the VPN server while connecting.</p></details><details><summary>How does SanadBan update?</summary><p>Automatically and quietly. The background service downloads new versions from this GitHub page, checks the developer&#x27;s signature and installs while idle or at the next restart, never during a connection.</p></details><details><summary>Is there a Linux version?</summary><p>Not yet. Once the Windows version is fully tested, a Linux version with the same design will follow for Ubuntu, Mint and Arch.</p></details></div>
+    </div>
+  </div>
+</section>
+
+<section class="roadmap" id="roadmap" aria-labelledby="roadmap-h">
+  <div class="wrap">
+    <h2 id="roadmap-h">Roadmap</h2>
+    <p class="lead" style="margin-top:1rem">Where the project stands today. Updated with every release and every new step.</p>
+    <ol class="road"><li class="done"><span class="st">Done</span><span>Windows app with a background service, Persian and English, for x64 and ARM64 from one file</span></li><li class="done"><span class="st">Done</span><span>Signed automatic updates from GitHub, with the previous version restored automatically</span></li><li class="now"><span class="st">In progress</span><span>Field testing in offices: a real connection, split tunnel, keep-alive and the kill switch on x64 computers</span></li><li class="next"><span class="st">Next</span><span>A clean takeover of computers that ran the SsarSplitTunnel script</span></li><li class="next"><span class="st">Next</span><span>Linux version (Ubuntu, Mint, Arch) as AppImage, deb, Flatpak and Snap for amd64 and arm64</span></li></ol>
+  </div>
+</section>
+
+<section class="changes" id="changes" aria-labelledby="changes-h">
+  <div class="wrap">
+    <h2 id="changes-h">What changed</h2>
+    <div class="timeline"><article class="rel"><div><div class="ver"><a href="https://github.com/mneftekhar/sanadban-releases/releases/tag/v0.2.1">0.2.1</a></div><div class="when"><time datetime="2026-11-12">12 November 2026</time><br>Dodo</div></div><div><p class="sum">One download for every Windows PC, and safer automatic updates.</p><ul><li><span class="kind k-added">Added</span><span>One download for every Windows PC: SanadBan-0.2.1-win.zip starts the right program for an x64 or an ARM64 processor by itself.</span></li><li><span class="kind k-added">Added</span><span>Update watchdog: if a new version&#x27;s background service cannot start, the previous version is put back by itself and the failed version is never offered to that PC again.</span></li><li><span class="kind k-changed">Changed</span><span>An update now installs early only after 30 quiet minutes: not connected, not trying to reconnect, and no window open. Otherwise it waits for the next restart.</span></li><li><span class="kind k-changed">Changed</span><span>Restoring the previous version is done by one part at a time, so two restores can never run together.</span></li><li><span class="kind k-fixed">Fixed</span><span>An update could install while SanadBan was waiting between automatic reconnect attempts.</span></li><li><span class="kind k-fixed">Fixed</span><span>A half-finished restore left behind by an interrupted update is now set aside safely instead of blocking later updates.</span></li><li><span class="kind k-removed">Removed</span><span>Separate first-install downloads per processor. The per-processor files stay in each release for the automatic updates only.</span></li></ul></div></article><article class="rel"><div><div class="ver"><a href="https://github.com/mneftekhar/sanadban-releases/releases/tag/v0.1.1">0.1.1</a></div><div class="when"><time datetime="2026-11-11">11 November 2026</time><br>Dodo</div></div><div><p class="sum">First version delivered by the automatic updater.</p><ul><li><span class="kind k-changed">Changed</span><span>Installed copies of 0.1.0 updated themselves to this version without anyone touching them.</span></li><li><span class="kind k-fixed">Fixed</span><span>Releases can be built on a PC that cannot reach the .NET package server.</span></li></ul></div></article><article class="rel"><div><div class="ver"><a href="https://github.com/mneftekhar/sanadban-releases/releases/tag/v0.1.0">0.1.0</a></div><div class="when"><time datetime="2026-11-11">11 November 2026</time><br>Dodo</div></div><div><p class="sum">First signed release. SanadBan replaces the separate Windows VPN entries and the SsarSplitTunnel scripts.</p><ul><li><span class="kind k-added">Added</span><span>One window to connect, with the protocol each server accepts (SSTP, PPTP, L2TP/IPsec or IKEv2, all built into Windows).</span></li><li><span class="kind k-added">Added</span><span>Split tunnel: only the registry&#x27;s networks go through the VPN; registry names are looked up on the registry DNS while connected.</span></li><li><span class="kind k-added">Added</span><span>Keep-alive checks, automatic reconnect, an optional kill switch, and IPv6 blocked while connected unless you allow it.</span></li><li><span class="kind k-added">Added</span><span>Logins encrypted with the computer&#x27;s key: one Default login for all servers, or one per server.</span></li><li><span class="kind k-added">Added</span><span>Troubleshoot page that tests adapters, DNS, servers, internet and the VPN, and saves a report for support.</span></li><li><span class="kind k-added">Added</span><span>Background service: administrator rights are needed once; the connection keeps going when the window is closed.</span></li><li><span class="kind k-added">Added</span><span>Silent automatic updates from this page, each one signed and checked before it is installed.</span></li><li><span class="kind k-added">Added</span><span>Persian and English, light and dark, and a Guide that explains every page and the common Windows VPN errors (602, 691, 800, 809, 868).</span></li><li><span class="kind k-changed">Changed</span><span>The app formerly called Notary VPN Client is now SanadBan. Servers, logins and settings of an existing install are carried over.</span></li><li><span class="kind k-changed">Changed</span><span>Every system message box was replaced by the app&#x27;s own confirmation window, in the app&#x27;s language and theme.</span></li><li><span class="kind k-fixed">Fixed</span><span>The service no longer runs a request with the rights of the person who sent it.</span></li><li><span class="kind k-fixed">Fixed</span><span>A window crash at start, requests that could wait forever, and errors that closed the window without a trace.</span></li><li><span class="kind k-removed">Removed</span><span>The old Notary VPN Client service: installing SanadBan removes it and its leftover DNS rules.</span></li></ul></div></article></div>
+    <p class="more"><a href="https://github.com/mneftekhar/sanadban-releases/blob/main/CHANGELOG.md">Full changelog on GitHub</a></p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <h3>About the developer</h3>
+      <p>SanadBan is an independent project by M. Eftekhar. It was made out of respect for Iran&#x27;s notaries, so that every notary office has a connection to the registry network it can rely on, and can simply get on with its work.</p>
+      <div class="links">
+        <a href="https://github.com/mneftekhar/sanadban-releases">GitHub</a>
+        <a href="https://github.com/mneftekhar/sanadban-releases/releases">All releases on GitHub</a>
+        <a href="https://github.com/mneftekhar/sanadban-releases/blob/main/CHANGELOG.md">Changelog</a>
+      </div>
+    </div>
+    <div>
+      <h3>Privacy</h3>
+      <p>Your logins are encrypted on this computer and never leave it. Logs and reports are kept on this computer. SanadBan contacts the internet only to reach the VPN servers and to check for updates; Troubleshoot also asks public DNS and a few public websites, only while the tests run.</p>
+      <p class="independent">SanadBan is an independent project; it is not made by or affiliated with Iran&#x27;s Registration Organization of Deeds and Properties.</p>
+    </div>
+    <p class="small">© M. Eftekhar. Fonts: Vazirmatn by Saber Rastikerdar and Space Grotesk by Florian Karsten, both under the SIL Open Font License 1.1.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var $ = function (s) { return document.querySelector(s); };
+  var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  /* the language switch remembers the choice */
+  document.querySelectorAll("[data-go]").forEach(function (a) {
+    a.addEventListener("click", function () { try { localStorage.setItem("sb-lang", a.getAttribute("data-go")); } catch (e) {} });
+  });
+  /* close the narrow-screen menu after a choice */
+  document.querySelectorAll(".menu a").forEach(function (a) { a.addEventListener("click", function () { $(".menu").open = false; }); });
+  /* the recording */
+  var v = $(".js-video");
+  if (reduce) v.controls = true; else { v.autoplay = true; var p = v.play(); if (p && p.catch) p.catch(function () { v.controls = true; }); }
+  /* the pages of the app */
+  var tabs = [].slice.call(document.querySelectorAll(".tabs button")), cur = 0, pre = "../", lang = "en";
+  function show(i, focus) {
+    cur = i; var b = tabs[i];
+    $(".js-shot").src = pre + "assets/" + b.dataset.id + "-" + lang + ".webp";
+    $(".js-shot").alt = b.dataset.alt; $(".js-what").textContent = b.dataset.what;
+    $(".shot").setAttribute("aria-labelledby", b.id);
+    tabs.forEach(function (x, j) { x.setAttribute("aria-selected", j === i); x.tabIndex = j === i ? 0 : -1; });
+    if (focus) b.focus();
+  }
+  tabs.forEach(function (b, i) { b.addEventListener("click", function () { show(i, true); }); });
+  $(".tabs").addEventListener("keydown", function (e) {
+    var n = tabs.length, f = lang === "fa" ? ["ArrowDown", "ArrowLeft"] : ["ArrowDown", "ArrowRight"], k = e.key, i = cur;
+    if (f.indexOf(k) >= 0) i = (i + 1) % n; else if (k.indexOf("Arrow") === 0) i = (i + n - 1) % n;
+    else if (k === "Home") i = 0; else if (k === "End") i = n - 1; else return;
+    e.preventDefault(); show(i, true);
+  });
+  /* the fine line pattern of official papers, drawn once */
+  var svg = $(".rosette"), NS = "http://www.w3.org/2000/svg";
+  function gcd(a, b) { return b ? gcd(b, a % b) : a; }
+  [[150, 52, 66, 0], [150, 39, 48, .35], [118, 31, 52, .9], [176, 44, 30, .2]].forEach(function (L, k) {
+    var R = L[0], r = L[1], dd = L[2], ph = L[3], pts = [], n = 2600;
+    for (var i = 0; i <= n; i++) {
+      var a = i / n * Math.PI * 2 * (r / gcd(R, r));
+      pts.push((i ? "L" : "M") + ((R - r) * Math.cos(a + ph) + dd * Math.cos((R - r) / r * a + ph)).toFixed(1) + " " + ((R - r) * Math.sin(a + ph) - dd * Math.sin((R - r) / r * a + ph)).toFixed(1));
+    }
+    var p = document.createElementNS(NS, "path"); p.setAttribute("d", pts.join(""));
+    if (k === 2) p.style.stroke = "#D9C49C";
+    svg.appendChild(p);
+    if (!reduce && p.getTotalLength) {
+      var len = p.getTotalLength(); p.style.strokeDasharray = len; p.style.strokeDashoffset = len; p.getBoundingClientRect();
+      p.style.transition = "stroke-dashoffset " + (2.6 + k * .5) + "s cubic-bezier(.4,0,.2,1) " + (k * .15) + "s";
+      requestAnimationFrame(function () { p.style.strokeDashoffset = 0; });
+    }
+  });
+})();
+</script>
+</body>
+</html>

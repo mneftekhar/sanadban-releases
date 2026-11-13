@@ -1,0 +1,97 @@
+[
+ {
+  "tag": "v0.2.1",
+  "date": "2026-11-12",
+  "body": "One download for every Windows PC (x64 and ARM64). Updates no longer install while SanadBan is reconnecting.\n\nیک فایل برای همهٔ رایانه‌های ویندوزی (x64 و ARM64). به‌روزرسانی دیگر هنگام اتصال دوبارهٔ سندبان نصب نمی‌شود.",
+  "url": "https://github.com/mneftekhar/sanadban-releases/releases/tag/v0.2.1",
+  "draft": false,
+  "prerelease": false,
+  "assets": [
+   {
+    "name": "manifest.json",
+    "size": 1313,
+    "url": "https://github.com/mneftekhar/sanadban-releases/releases/download/v0.2.1/manifest.json"
+   },
+   {
+    "name": "manifest.json.sig",
+    "size": 64,
+    "url": "https://github.com/mneftekhar/sanadban-releases/releases/download/v0.2.1/manifest.json.sig"
+   },
+   {
+    "name": "SanadBan-0.2.1-win-arm64.zip",
+    "size": 2544402,
+    "url": "https://github.com/mneftekhar/sanadban-releases/releases/download/v0.2.1/SanadBan-0.2.1-win-arm64.zip"
+   },
+   {
+    "name": "SanadBan-0.2.1-win-x64.zip",
+    "size": 2569648,
+    "url": "https://github.com/mneftekhar/sanadban-releases/releases/download/v0.2.1/SanadBan-0.2.1-win-x64.zip"
+   },
+   {
+    "name": "SanadBan-0.2.1-win.zip",
+    "size": 5132093,
+    "url": "https://github.com/mneftekhar/sanadban-releases/releases/download/v0.2.1/SanadBan-0.2.1-win.zip"
+   }
+  ]
+ },
+ {
+  "tag": "v0.1.1",
+  "date": "2026-11-11",
+  "body": "Release script: build without internet access to NuGet. First automatic-update test.\n\nاسکریپت انتشار: ساخت بدون دسترسی به NuGet. نخستین آزمایش به‌روزرسانی خودکار.",
+  "url": "https://github.com/mneftekhar/sanadban-releases/releases/tag/v0.1.1",
+  "draft": false,
+  "prerelease": false,
+  "assets": [
+   {
+    "name": "manifest.json",
+    "size": 1147,
+    "url": "https://github.com/mneftekhar/sanadban-releases/releases/download/v0.1.1/manifest.json"
+   },
+   {
+    "name": "manifest.json.sig",
+    "size": 64,
+    "url": "https://github.com/mneftekhar/sanadban-releases/releases/download/v0.1.1/manifest.json.sig"
+   },
+   {
+    "name": "SanadBan-0.1.1-win-arm64.zip",
+    "size": 2530381,
+    "url": "https://github.com/mneftekhar/sanadban-releases/releases/download/v0.1.1/SanadBan-0.1.1-win-arm64.zip"
+   },
+   {
+    "name": "SanadBan-0.1.1-win-x64.zip",
+    "size": 2555633,
+    "url": "https://github.com/mneftekhar/sanadban-releases/releases/download/v0.1.1/SanadBan-0.1.1-win-x64.zip"
+   }
+  ]
+ },
+ {
+  "tag": "v0.1.0",
+  "date": "2026-11-11",
+  "body": "First signed release. / نخستین نسخهٔ امضاشده.",
+  "url": "https://github.com/mneftekhar/sanadban-releases/releases/tag/v0.1.0",
+  "draft": false,
+  "prerelease": false,
+  "assets": [
+   {
+    "name": "manifest.json",
+    "size": 701,
+    "url": "https://github.com/mneftekhar/sanadban-releases/releases/download/v0.1.0/manifest.json"
+   },
+   {
+    "name": "manifest.json.sig",
+    "size": 64,
+    "url": "https://github.com/mneftekhar/sanadban-releases/releases/download/v0.1.0/manifest.json.sig"
+   },
+   {
+    "name": "SanadBan-0.1.0-win-arm64.zip",
+    "size": 2530339,
+    "url": "https://github.com/mneftekhar/sanadban-releases/releases/download/v0.1.0/SanadBan-0.1.0-win-arm64.zip"
+   },
+   {
+    "name": "SanadBan-0.1.0-win-x64.zip",
+    "size": 2555584,
+    "url": "https://github.com/mneftekhar/sanadban-releases/releases/download/v0.1.0/SanadBan-0.1.0-win-x64.zip"
+   }
+  ]
+ }
+]
