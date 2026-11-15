@@ -1,5 +1,40 @@
 [
  {
+  "tag": "v0.2.2",
+  "date": "2026-11-15",
+  "body": "Alpha test build. Real x64 PCs, installed updates, interactive UI and several live connection cases are not yet verified; SABT1/SABT4 PPTP did not connect on the tested network. Stable 0.2.1 remains the latest automatic-update release.\n- Fixed: clarified split-tunnel kill-switch, keep-alive and IPv6 guidance in English and Persian.\n- Fixed: deliberate Disconnect now clears stale reconnect notices.\n\nساخت آزمایشی آلفا. رایانه‌های واقعی x64، به‌روزرسانی نسخهٔ نصب‌شده، رابط کاربری و چند آزمایش اتصال واقعی هنوز تأیید نشده‌اند؛ SABT1 و SABT4 با PPTP در شبکهٔ آزمایش وصل نشدند. نسخهٔ پایدار 0.2.1 همچنان آخرین انتشار برای به‌روزرسانی خودکار است.\n- رفع شد: توضیحات قطع ایمن اینترنت، زنده نگه‌داشتن اتصال و IPv6 در حالت تفکیک ترافیک، به فارسی و انگلیسی اصلاح شد.\n- رفع شد: با قطع اتصال عمدی، اخطار قدیمیِ اتصال دوباره پاک می‌شود.\n",
+  "url": "https://github.com/mneftekhar/sanadban-releases/releases/tag/v0.2.2",
+  "draft": false,
+  "prerelease": true,
+  "assets": [
+   {
+    "name": "manifest.json",
+    "size": 3105,
+    "url": "https://github.com/mneftekhar/sanadban-releases/releases/download/v0.2.2/manifest.json"
+   },
+   {
+    "name": "manifest.json.sig",
+    "size": 64,
+    "url": "https://github.com/mneftekhar/sanadban-releases/releases/download/v0.2.2/manifest.json.sig"
+   },
+   {
+    "name": "SanadBan-0.2.2-win-arm64.zip",
+    "size": 2545098,
+    "url": "https://github.com/mneftekhar/sanadban-releases/releases/download/v0.2.2/SanadBan-0.2.2-win-arm64.zip"
+   },
+   {
+    "name": "SanadBan-0.2.2-win-x64.zip",
+    "size": 2570330,
+    "url": "https://github.com/mneftekhar/sanadban-releases/releases/download/v0.2.2/SanadBan-0.2.2-win-x64.zip"
+   },
+   {
+    "name": "SanadBan-0.2.2-win.zip",
+    "size": 5133468,
+    "url": "https://github.com/mneftekhar/sanadban-releases/releases/download/v0.2.2/SanadBan-0.2.2-win.zip"
+   }
+  ]
+ },
+ {
   "tag": "v0.2.1",
   "date": "2026-11-12",
   "body": "One download for every Windows PC (x64 and ARM64). Updates no longer install while SanadBan is reconnecting.\n\nیک فایل برای همهٔ رایانه‌های ویندوزی (x64 و ARM64). به‌روزرسانی دیگر هنگام اتصال دوبارهٔ سندبان نصب نمی‌شود.",

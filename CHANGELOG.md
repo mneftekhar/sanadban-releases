@@ -19,6 +19,15 @@
 
 همهٔ نسخه‌های منتشرشدهٔ سندبان. نسخه‌های نصب‌شده خودشان به‌روز می‌شوند.
 
+## [۰.۲.۲](https://github.com/mneftekhar/sanadban-releases/releases/tag/v0.2.2) — ۲۴ آبان ۱۴۰۵
+
+ساخت آزمایشی آلفا. رایانه‌های واقعی x64، به‌روزرسانی نسخهٔ نصب‌شده، رابط کاربری و چند آزمایش اتصال واقعی هنوز تأیید نشده‌اند؛ SABT1 و SABT4 با PPTP در شبکهٔ آزمایش وصل نشدند. نسخهٔ پایدار 0.2.1 همچنان آخرین انتشار برای به‌روزرسانی خودکار است.
+
+**رفع شد**
+
+- توضیحات قطع ایمن اینترنت، زنده نگه‌داشتن اتصال و IPv6 در حالت تفکیک ترافیک، به فارسی و انگلیسی اصلاح شد.
+- با قطع اتصال عمدی، اخطار قدیمیِ اتصال دوباره پاک می‌شود.
+
 ## [۰.۲.۱](https://github.com/mneftekhar/sanadban-releases/releases/tag/v0.2.1) — ۲۱ آبان ۱۴۰۵ (دودو)
 
 یک فایل برای همهٔ رایانه‌های ویندوزی و به‌روزرسانی خودکارِ مطمئن‌تر.
@@ -94,6 +103,15 @@
 # Changelog
 
 Every published version of SanadBan. Installed copies update themselves.
+
+## [0.2.2](https://github.com/mneftekhar/sanadban-releases/releases/tag/v0.2.2) — 15 November 2026
+
+Alpha test build. Real x64 PCs, installed updates, interactive UI and several live connection cases are not yet verified; SABT1/SABT4 PPTP did not connect on the tested network. Stable 0.2.1 remains the latest automatic-update release.
+
+**Fixed**
+
+- clarified split-tunnel kill-switch, keep-alive and IPv6 guidance in English and Persian.
+- deliberate Disconnect now clears stale reconnect notices.
 
 ## [0.2.1](https://github.com/mneftekhar/sanadban-releases/releases/tag/v0.2.1) — 12 November 2026 (Dodo)
 
