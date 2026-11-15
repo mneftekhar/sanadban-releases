@@ -43,7 +43,7 @@ jobs:
           git add -A README.md CHANGELOG.md guides docs site/releases.json
           if git diff --cached --quiet; then echo "Nothing to commit"; else
             git commit -m "Update website and README from the current releases"
-            git push
+            git push origin HEAD:main
           fi
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
