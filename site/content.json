@@ -147,11 +147,11 @@
       { "q": { "fa": "«برای این سرور نام کاربری و رمز عبوری ذخیره نشده است»", "en": "\"No user name and password are saved for this server\"" },
         "a": { "fa": "در صفحهٔ «اطلاعات ورود»، برای همهٔ سرورها یا همان سرور، اطلاعات ورود اضافه کنید.", "en": "Add a login on Logins, for all servers or for that server." } },
       { "q": { "fa": "اتصال پس از مدتی بی‌کاری قطع می‌شود", "en": "The connection drops after a while with no activity" },
-        "a": { "fa": "مطمئن شوید «زنده نگه‌داشتن اتصال» روشن است (صفحهٔ «تفکیک ترافیک») و نشانی آن پاسخ می‌دهد («عیب‌یابی»، بخش «اتصال VPN»).", "en": "Make sure Keep the connection alive is on (Split tunnel page) and its address answers (Troubleshoot, VPN connection section)." } },
+        "a": { "fa": "مطمئن شوید «زنده نگه‌داشتن اتصال» روشن است (صفحهٔ «تفکیک ترافیک»). این ویژگی ترافیک دوره‌ای می‌فرستد؛ ممکن است پاسخ ping مسدود باشد در حالی که اتصال فعال می‌ماند. دسترس‌پذیری سازمان و پایداری اتصال را بررسی کنید، نه فقط ping را.", "en": "Make sure Keep the connection alive is on (Split tunnel page). It sends periodic traffic; an unanswered ping may be blocked even while the connection stays active. Check registry reachability and connection stability, not ping alone." } },
       { "q": { "fa": "سایت‌های سازمان با نامشان باز نمی‌شوند", "en": "Registry websites do not open by name" },
         "a": { "fa": "وصل شوید و «عیب‌یابی» را اجرا کنید: بخش «اتصال VPN» نشان می‌دهد قانون DNS سازمان فعال است یا نه.", "en": "Connect, then run Troubleshoot: the VPN connection section shows whether the registry DNS rule is active." } },
-      { "q": { "fa": "پس از قطع VPN، اینترنت از کار افتاد", "en": "The internet stopped working after the VPN dropped" },
-        "a": { "fa": "این کارِ «قطع ایمن اینترنت» برای محافظت از شماست. دوباره وصل شوید یا در صفحهٔ «خانه»، «اینترنت را تا اتصال بعدی آزاد کن» را بزنید.", "en": "That is the kill switch protecting you. Connect again, or press Allow internet until the next connection on Home." } }
+      { "q": { "fa": "پس از قطع VPN، ترافیک مربوط به آن مسدود شده است", "en": "Traffic meant for the VPN is blocked after a drop" },
+        "a": { "fa": "این کارِ «قطع ایمن اینترنت» برای محافظت از شماست. در تفکیک ترافیک فقط ترافیک سازمان مسدود می‌شود و اینترنت معمولی کار می‌کند؛ وقتی همه‌چیز از VPN می‌رود، اینترنت مسدود می‌شود. دوباره وصل شوید یا در صفحهٔ «خانه»، «عبور ترافیک بیرون از VPN را تا اتصال بعدی آزاد کن» را بزنید.", "en": "That is the kill switch protecting you. In split tunnel, only registry traffic is blocked and ordinary internet continues; in full tunnel, the internet is blocked. Connect again, or press Allow traffic outside the VPN until the next connection on Home." } }
     ]
   },
 
