@@ -45,15 +45,15 @@
 
 ### اتصال پس از مدتی بی‌کاری قطع می‌شود
 
-مطمئن شوید «زنده نگه‌داشتن اتصال» روشن است (صفحهٔ «تفکیک ترافیک») و نشانی آن پاسخ می‌دهد («عیب‌یابی»، بخش «اتصال VPN»).
+مطمئن شوید «زنده نگه‌داشتن اتصال» روشن است (صفحهٔ «تفکیک ترافیک»). این ویژگی ترافیک دوره‌ای می‌فرستد؛ ممکن است پاسخ ping مسدود باشد در حالی که اتصال فعال می‌ماند. دسترس‌پذیری سازمان و پایداری اتصال را بررسی کنید، نه فقط ping را.
 
 ### سایت‌های سازمان با نامشان باز نمی‌شوند
 
 وصل شوید و «عیب‌یابی» را اجرا کنید: بخش «اتصال VPN» نشان می‌دهد قانون DNS سازمان فعال است یا نه.
 
-### پس از قطع VPN، اینترنت از کار افتاد
+### پس از قطع VPN، ترافیک مربوط به آن مسدود شده است
 
-این کارِ «قطع ایمن اینترنت» برای محافظت از شماست. دوباره وصل شوید یا در صفحهٔ «خانه»، «اینترنت را تا اتصال بعدی آزاد کن» را بزنید.
+این کارِ «قطع ایمن اینترنت» برای محافظت از شماست. در تفکیک ترافیک فقط ترافیک سازمان مسدود می‌شود و اینترنت معمولی کار می‌کند؛ وقتی همه‌چیز از VPN می‌رود، اینترنت مسدود می‌شود. دوباره وصل شوید یا در صفحهٔ «خانه»، «عبور ترافیک بیرون از VPN را تا اتصال بعدی آزاد کن» را بزنید.
 
 <a href="#english">English ↓</a>
 
@@ -93,12 +93,12 @@ Add a login on Logins, for all servers or for that server.
 
 ### The connection drops after a while with no activity
 
-Make sure Keep the connection alive is on (Split tunnel page) and its address answers (Troubleshoot, VPN connection section).
+Make sure Keep the connection alive is on (Split tunnel page). It sends periodic traffic; an unanswered ping may be blocked even while the connection stays active. Check registry reachability and connection stability, not ping alone.
 
 ### Registry websites do not open by name
 
 Connect, then run Troubleshoot: the VPN connection section shows whether the registry DNS rule is active.
 
-### The internet stopped working after the VPN dropped
+### Traffic meant for the VPN is blocked after a drop
 
-That is the kill switch protecting you. Connect again, or press Allow internet until the next connection on Home.
+That is the kill switch protecting you. In split tunnel, only registry traffic is blocked and ordinary internet continues; in full tunnel, the internet is blocked. Connect again, or press Allow traffic outside the VPN until the next connection on Home.
