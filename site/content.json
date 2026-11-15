@@ -66,8 +66,8 @@
       "en": "SanadBan connects with one press, sends only registry traffic through the VPN, keeps the connection alive, and when Windows reports an error it says in plain words what happened and what to do."
     },
     "about": {
-      "fa": "سندبان برنامه‌ای برای ویندوز است که رایانه‌های دفاتر اسناد رسمی را از راه سرورهای VPN سازمان ثبت اسناد و املاک به شبکهٔ سازمان وصل می‌کند. جای اتصال‌های جداگانهٔ VPN ویندوز و اسکریپت‌های SsarSplitTunnel را می‌گیرد.",
-      "en": "SanadBan is a Windows app that connects the computers of Iranian notary offices to the registry network through the registry's VPN servers. It replaces the separate Windows VPN entries and the SsarSplitTunnel scripts."
+      "fa": "سندبان برنامه‌ای تازه و مستقل برای ویندوز است که با رابط گرافیکیِ نو و طراحی از پایه، رایانه‌های دفاتر اسناد رسمی را به شبکهٔ سازمان وصل می‌کند؛ راهی امن‌تر و ساده‌تر برای دسترسی به سازمان.",
+      "en": "SanadBan is a new, independent Windows application designed from scratch with a graphical interface, giving notary offices a safer and simpler way to connect to the registry network through its VPN servers."
     }
   },
 
@@ -166,8 +166,8 @@
         "a": { "fa": "ویندوز ۱۰ و ۱۱، روی رایانه‌های x64 (اینتل و AMD) و ARM64، با یک فایلِ مشترک. ‎.NET 10 Desktop Runtime‎ مایکروسافت هم باید نصب باشد.", "en": "Windows 10 and 11, on x64 (Intel and AMD) and ARM64 computers, from one shared file. Microsoft's .NET 10 Desktop Runtime must be installed too." } },
       { "q": { "fa": "از کدام پروتکل‌های VPN پشتیبانی می‌کند؟", "en": "Which VPN protocols does it support?" },
         "a": { "fa": "SSTP، PPTP، L2TP/IPsec و IKEv2؛ همان پروتکل‌هایی که خودِ ویندوز دارد. برای هر سرور همان پروتکلی به‌کار می‌رود که آن سرور می‌پذیرد.", "en": "SSTP, PPTP, L2TP/IPsec and IKEv2, the protocols built into Windows. Each server is used with the protocol it accepts." } },
-      { "q": { "fa": "آیا جای اسکریپت SsarSplitTunnel را می‌گیرد؟", "en": "Does it replace the SsarSplitTunnel script?" },
-        "a": { "fa": "بله؛ سندبان جای آن اسکریپت‌ها و اتصال‌های جداگانهٔ VPN ویندوز را می‌گیرد. گامی که رایانه‌ای را که پیش‌تر اسکریپت داشته به‌طور تمیز تحویل بگیرد در نقشهٔ راه است.", "en": "Yes; SanadBan replaces those scripts and the separate Windows VPN entries. A step that cleanly takes over a computer that ran the script is on the roadmap." } },
+      { "q": { "fa": "آیا سندبان بر اساس ابزار یا اسکریپت قدیمی ساخته شده است؟", "en": "Is SanadBan based on an older tool or script?" },
+        "a": { "fa": "خیر. سندبان برنامه‌ای تازه با رابط گرافیکی و طراحی مستقل است که از پایه برای اتصال امن‌تر و آسان‌تر دفترخانه به شبکهٔ سازمان ساخته شده است.", "en": "No. SanadBan is a new application with its own graphical interface and independent design, built from scratch to give notary offices a safer and simpler connection to the registry network." } },
       { "q": { "fa": "رمز عبور من کجا نگه داشته می‌شود؟", "en": "Where is my password kept?" },
         "a": { "fa": "روی همان رایانه، رمزگذاری‌شده با کلیدِ رایانه، و فقط سرویس سندبان از آن استفاده می‌کند. جز به سرور VPN هنگام اتصال، به هیچ جا فرستاده نمی‌شود.", "en": "On that computer, encrypted with the computer's key, and used only by the SanadBan service. It is never sent anywhere except to the VPN server while connecting." } },
       { "q": { "fa": "سندبان چطور به‌روز می‌شود؟", "en": "How does SanadBan update?" },
@@ -189,7 +189,7 @@
       { "state": "done", "fa": "برنامهٔ ویندوز با سرویس پس‌زمینه، فارسی و انگلیسی، برای x64 و ARM64 با یک فایل", "en": "Windows app with a background service, Persian and English, for x64 and ARM64 from one file" },
       { "state": "done", "fa": "به‌روزرسانی خودکارِ امضاشده از GitHub، با بازگرداندنِ خودکارِ نسخهٔ قبلی", "en": "Signed automatic updates from GitHub, with the previous version restored automatically" },
       { "state": "now", "fa": "آزمایش در دفترخانه: اتصال واقعی، تفکیک ترافیک، زنده نگه‌داشتن اتصال و قطع ایمن اینترنت روی رایانه‌های x64", "en": "Field testing in offices: a real connection, split tunnel, keep-alive and the kill switch on x64 computers" },
-      { "state": "next", "fa": "تحویلِ تمیزِ رایانه‌هایی که اسکریپت SsarSplitTunnel داشتند", "en": "A clean takeover of computers that ran the SsarSplitTunnel script" },
+      { "state": "next", "fa": "مهاجرت تمیز از تنظیمات قدیمی VPN", "en": "A clean migration from older VPN setups" },
       { "state": "next", "fa": "نسخهٔ لینوکس (Ubuntu، Mint، Arch) با بسته‌های AppImage، deb، Flatpak و Snap برای amd64 و arm64", "en": "Linux version (Ubuntu, Mint, Arch) as AppImage, deb, Flatpak and Snap for amd64 and arm64" }
     ]
   },

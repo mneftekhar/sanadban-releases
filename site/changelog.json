@@ -83,8 +83,8 @@
         "fa": "دودو"
       },
       "summary": {
-        "en": "First signed release. SanadBan replaces the separate Windows VPN entries and the SsarSplitTunnel scripts.",
-        "fa": "نخستین نسخهٔ امضاشده. سندبان جای اتصال‌های جداگانهٔ VPN ویندوز و اسکریپت‌های SsarSplitTunnel را می‌گیرد."
+        "en": "First signed release. SanadBan introduces a new graphical application for secure, simple registry connections.",
+        "fa": "نخستین نسخهٔ امضاشده. سندبان برنامه‌ای تازه با رابط گرافیکی برای اتصال امن و آسان به شبکهٔ سازمان است."
       },
       "added": [
         {

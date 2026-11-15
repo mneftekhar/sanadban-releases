@@ -29,7 +29,7 @@
 
 ## سندبان چیست؟
 
-سندبان برنامه‌ای برای ویندوز است که رایانه‌های دفاتر اسناد رسمی را از راه سرورهای VPN سازمان ثبت اسناد و املاک به شبکهٔ سازمان وصل می‌کند. جای اتصال‌های جداگانهٔ VPN ویندوز و اسکریپت‌های SsarSplitTunnel را می‌گیرد.
+سندبان برنامه‌ای تازه و مستقل برای ویندوز است که با رابط گرافیکیِ نو و طراحی از پایه، رایانه‌های دفاتر اسناد رسمی را به شبکهٔ سازمان وصل می‌کند؛ راهی امن‌تر و ساده‌تر برای دسترسی به سازمان.
 
 **آخرین نسخه: [۰.۲.۱](https://github.com/mneftekhar/sanadban-releases/releases/tag/v0.2.1)** — منتشرشده در ۲۱ آبان ۱۴۰۵ · [دریافت برای ویندوز](https://github.com/mneftekhar/sanadban-releases/releases/download/v0.2.1/SanadBan-0.2.1-win.zip)
 
@@ -73,7 +73,7 @@
 
 ## What is SanadBan?
 
-SanadBan is a Windows app that connects the computers of Iranian notary offices to the registry network through the registry's VPN servers. It replaces the separate Windows VPN entries and the SsarSplitTunnel scripts.
+SanadBan is a new, independent Windows application designed from scratch with a graphical interface, giving notary offices a safer and simpler way to connect to the registry network through its VPN servers.
 
 **Latest version: [0.2.1](https://github.com/mneftekhar/sanadban-releases/releases/tag/v0.2.1)** — released 12 November 2026 · [Download for Windows](https://github.com/mneftekhar/sanadban-releases/releases/download/v0.2.1/SanadBan-0.2.1-win.zip)
 

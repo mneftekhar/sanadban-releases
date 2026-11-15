@@ -33,9 +33,9 @@
 
 SSTP، PPTP، L2TP/IPsec و IKEv2؛ همان پروتکل‌هایی که خودِ ویندوز دارد. برای هر سرور همان پروتکلی به‌کار می‌رود که آن سرور می‌پذیرد.
 
-### آیا جای اسکریپت SsarSplitTunnel را می‌گیرد؟
+### آیا سندبان بر اساس ابزار یا اسکریپت قدیمی ساخته شده است؟
 
-بله؛ سندبان جای آن اسکریپت‌ها و اتصال‌های جداگانهٔ VPN ویندوز را می‌گیرد. گامی که رایانه‌ای را که پیش‌تر اسکریپت داشته به‌طور تمیز تحویل بگیرد در نقشهٔ راه است.
+خیر. سندبان برنامه‌ای تازه با رابط گرافیکی و طراحی مستقل است که از پایه برای اتصال امن‌تر و آسان‌تر دفترخانه به شبکهٔ سازمان ساخته شده است.
 
 ### رمز عبور من کجا نگه داشته می‌شود؟
 
@@ -75,9 +75,9 @@ Windows 10 and 11, on x64 (Intel and AMD) and ARM64 computers, from one shared f
 
 SSTP, PPTP, L2TP/IPsec and IKEv2, the protocols built into Windows. Each server is used with the protocol it accepts.
 
-### Does it replace the SsarSplitTunnel script?
+### Is SanadBan based on an older tool or script?
 
-Yes; SanadBan replaces those scripts and the separate Windows VPN entries. A step that cleanly takes over a computer that ran the script is on the roadmap.
+No. SanadBan is a new application with its own graphical interface and independent design, built from scratch to give notary offices a safer and simpler connection to the registry network.
 
 ### Where is my password kept?
 

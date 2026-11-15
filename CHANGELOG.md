@@ -65,7 +65,7 @@
 
 ## [۰.۱.۰](https://github.com/mneftekhar/sanadban-releases/releases/tag/v0.1.0) — ۲۰ آبان ۱۴۰۵ (دودو)
 
-نخستین نسخهٔ امضاشده. سندبان جای اتصال‌های جداگانهٔ VPN ویندوز و اسکریپت‌های SsarSplitTunnel را می‌گیرد.
+نخستین نسخهٔ امضاشده. سندبان برنامه‌ای تازه با رابط گرافیکی برای اتصال امن و آسان به شبکهٔ سازمان است.
 
 **افزوده شد**
 
@@ -150,7 +150,7 @@ First version delivered by the automatic updater.
 
 ## [0.1.0](https://github.com/mneftekhar/sanadban-releases/releases/tag/v0.1.0) — 11 November 2026 (Dodo)
 
-First signed release. SanadBan replaces the separate Windows VPN entries and the SsarSplitTunnel scripts.
+First signed release. SanadBan introduces a new graphical application for secure, simple registry connections.
 
 **Added**
 
