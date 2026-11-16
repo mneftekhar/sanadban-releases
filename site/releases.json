@@ -1,5 +1,50 @@
 [
  {
+  "tag": "v0.3.3",
+  "date": "2026-11-16",
+  "body": "Alpha prerelease for controlled testing. Stable remains 0.2.1.\n- Added: First-run setup can download, verify and silently install the native .NET 10 Desktop Runtime.\n- Fixed: Installer process trees now have bounded cleanup, including descendants holding output pipes.\n- Fixed: Update safety checks reject unreadable RAS inventory and stale version defaults.\nKnown limits: clean-machine setup and real x64 validation are still being tested.\n\nپیش‌انتشار آلفا برای آزمایش کنترل‌شده. نسخهٔ پایدار همچنان 0.2.1 است.\n- افزوده شد: راه‌اندازی نخست می‌تواند مؤلفهٔ بومی ‎.NET 10 Desktop Runtime‎ را دریافت، بررسی و بی‌صدا نصب کند.\n- رفع شد: پاک‌سازی درخت فرایند نصب‌کننده محدود زمانی دارد، از جمله برای فرایندهای فرزندی که خروجی را باز نگه می‌دارند.\n- رفع شد: بررسی‌های ایمنی به‌روزرسانی، فهرست خوانانشدنیِ RAS و پیش‌فرض‌های قدیمیِ نسخه را رد می‌کنند.\nمحدودیت‌های شناخته‌شده: راه‌اندازی روی رایانهٔ پاک و اعتبارسنجی روی x64 واقعی هنوز در حال آزمایش است.\n",
+  "url": "https://github.com/mneftekhar/sanadban-releases/releases/tag/v0.3.3",
+  "draft": false,
+  "prerelease": true,
+  "assets": [
+   {
+    "name": "manifest.json",
+    "size": 1291,
+    "url": "https://github.com/mneftekhar/sanadban-releases/releases/download/v0.3.3/manifest.json"
+   },
+   {
+    "name": "manifest.json.sig",
+    "size": 64,
+    "url": "https://github.com/mneftekhar/sanadban-releases/releases/download/v0.3.3/manifest.json.sig"
+   },
+   {
+    "name": "SanadBan-0.3.3-win-arm64.zip",
+    "size": 2548882,
+    "url": "https://github.com/mneftekhar/sanadban-releases/releases/download/v0.3.3/SanadBan-0.3.3-win-arm64.zip"
+   },
+   {
+    "name": "SanadBan-0.3.3-win-x64.zip",
+    "size": 2574127,
+    "url": "https://github.com/mneftekhar/sanadban-releases/releases/download/v0.3.3/SanadBan-0.3.3-win-x64.zip"
+   },
+   {
+    "name": "SanadBan-0.3.3-win.zip",
+    "size": 5157555,
+    "url": "https://github.com/mneftekhar/sanadban-releases/releases/download/v0.3.3/SanadBan-0.3.3-win.zip"
+   },
+   {
+    "name": "windowsdesktop-runtime-win-arm64.exe",
+    "size": 54076376,
+    "url": "https://github.com/mneftekhar/sanadban-releases/releases/download/v0.3.3/windowsdesktop-runtime-win-arm64.exe"
+   },
+   {
+    "name": "windowsdesktop-runtime-win-x64.exe",
+    "size": 60066584,
+    "url": "https://github.com/mneftekhar/sanadban-releases/releases/download/v0.3.3/windowsdesktop-runtime-win-x64.exe"
+   }
+  ]
+ },
+ {
   "tag": "v0.2.2",
   "date": "2026-11-15",
   "body": "Alpha test build. Real x64 PCs, installed updates, interactive UI and several live connection cases are not yet verified; SABT1/SABT4 PPTP did not connect on the tested network. Stable 0.2.1 remains the latest automatic-update release.\r\n- Fixed: clarified split-tunnel kill-switch, keep-alive and IPv6 guidance in English and Persian.\r\n- Fixed: deliberate Disconnect now clears stale reconnect notices.\r\n\r\nساخت آزمایشی آلفا. اجرای این نسخه روی رایانه‌های x64 واقعی، روند به‌روزرسانی روی نسخه‌های نصب‌شده، رابط کاربری و چند مورد از آزمایش‌های اتصال واقعی هنوز تأیید نشده است. SABT1 و SABT4 نیز با PPTP در شبکهٔ آزمایش وصل نشدند. نسخهٔ پایدار 0.2.1 همچنان آخرین انتشاری است که از طریق به‌روزرسانی خودکار دریافت می‌شود.\r\n- رفع شد: توضیحات مربوط به قطع ایمن اینترنت، زنده نگه‌داشتن اتصال و IPv6 در حالت تفکیک ترافیک، به فارسی و انگلیسی اصلاح و شفاف‌تر شد.\r\n- رفع شد: با قطع اتصال عمدی، اخطار قدیمی مربوط به تلاش برای اتصال دوباره پاک می‌شود.\r\n\r\n",

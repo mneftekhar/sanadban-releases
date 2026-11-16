@@ -19,6 +19,19 @@
 
 همهٔ نسخه‌های منتشرشدهٔ سندبان. نسخهٔ نصب‌شده روی رایانهٔ شما به‌صورت خودکار به‌روز می‌شود.
 
+## [۰.۳.۳](https://github.com/mneftekhar/sanadban-releases/releases/tag/v0.3.3) — ۲۵ آبان ۱۴۰۵
+
+پیش‌انتشار آلفا برای آزمایش کنترل‌شده. نسخهٔ پایدار همچنان 0.2.1 است. محدودیت‌های شناخته‌شده: راه‌اندازی روی رایانهٔ پاک و اعتبارسنجی روی x64 واقعی هنوز در حال آزمایش است.
+
+**افزوده شد**
+
+- راه‌اندازی نخست می‌تواند مؤلفهٔ بومی ‎.NET 10 Desktop Runtime‎ را دریافت، بررسی و بی‌صدا نصب کند.
+
+**رفع شد**
+
+- پاک‌سازی درخت فرایند نصب‌کننده محدود زمانی دارد، از جمله برای فرایندهای فرزندی که خروجی را باز نگه می‌دارند.
+- بررسی‌های ایمنی به‌روزرسانی، فهرست خوانانشدنیِ RAS و پیش‌فرض‌های قدیمیِ نسخه را رد می‌کنند.
+
 ## [۰.۲.۲](https://github.com/mneftekhar/sanadban-releases/releases/tag/v0.2.2) — ۲۴ آبان ۱۴۰۵
 
 ساخت آزمایشی آلفا. اجرای این نسخه روی رایانه‌های x64 واقعی، روند به‌روزرسانی روی نسخه‌های نصب‌شده، رابط کاربری و چند مورد از آزمایش‌های اتصال واقعی هنوز تأیید نشده است. SABT1 و SABT4 نیز با PPTP در شبکهٔ آزمایش وصل نشدند. نسخهٔ پایدار 0.2.1 همچنان آخرین انتشاری است که از طریق به‌روزرسانی خودکار دریافت می‌شود.
@@ -103,6 +116,19 @@
 # Changelog
 
 Every published version of SanadBan. Installed copies update themselves.
+
+## [0.3.3](https://github.com/mneftekhar/sanadban-releases/releases/tag/v0.3.3) — 16 November 2026
+
+Alpha prerelease for controlled testing. Stable remains 0.2.1. Known limits: clean-machine setup and real x64 validation are still being tested.
+
+**Added**
+
+- First-run setup can download, verify and silently install the native .NET 10 Desktop Runtime.
+
+**Fixed**
+
+- Installer process trees now have bounded cleanup, including descendants holding output pipes.
+- Update safety checks reject unreadable RAS inventory and stale version defaults.
 
 ## [0.2.2](https://github.com/mneftekhar/sanadban-releases/releases/tag/v0.2.2) — 15 November 2026
 
